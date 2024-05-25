@@ -54,7 +54,7 @@ const projectFiles = {
     },
 
     /**
-     * @link https://webpack.js.org/configuration/devtool/
+     * @docs https://webpack.js.org/configuration/devtool/
      */
     projectSourceMaps: {
         enable: false,
