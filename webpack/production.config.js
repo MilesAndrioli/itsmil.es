@@ -32,15 +32,6 @@ module.exports = (projectOptions) => {
     ];
 
     /**
-     * Add sourcemap if enabled
-     */
-    const sourceMap = {
-        devtool: projectOptions.projectSourceMaps.enable
-            ? projectOptions.projectSourceMaps.devtool
-            : false,
-    };
-
-    /**
      * The configuration that's being returned to webpack
      */
     return {
@@ -50,7 +41,7 @@ module.exports = (projectOptions) => {
             path: projectOptions.projectOutput,
             filename: projectOptions.projectJs.filename,
         },
-        devtool: sourceMap.devtool,
+        devtool: false,
         optimization: optimizationRules,
         module: { rules: [jsRules, cssRules] },
         plugins: plugins,
