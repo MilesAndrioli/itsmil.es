@@ -1,6 +1,7 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const WebpackBar = require("webpackbar");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (projectOptions) => {
     const jsRules = {
@@ -41,6 +42,7 @@ module.exports = (projectOptions) => {
         new MiniCssExtractPlugin({
             filename: projectOptions.projectCss.filename,
         }),
+        new CleanWebpackPlugin(),
     ];
 
     // Add Browsersync to plugins if enabled
