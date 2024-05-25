@@ -58,7 +58,6 @@ const projectFiles = {
      */
     projectSourceMaps: {
         enable: false,
-        env: "dev", // dev | dev-prod | prod
         devtool: "source-map", // source-map || cheap-source-map
     },
 };
