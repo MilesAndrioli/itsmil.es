@@ -32,7 +32,7 @@ const projectFiles = {
         filename: "js/[name].js",
         entry: {
             frontend: projectPaths.projectJsPath + "/frontend.js",
-            backend: projectPaths.projectJsPath + "/backend.js",
+            // backend: projectPaths.projectJsPath + "/backend.js",
         },
         rules: {
             test: /\.js$/,
