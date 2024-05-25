@@ -1,0 +1,79 @@
+const path = require("path");
+
+const projectPaths = {
+    projectJsPath: path.resolve(__dirname, "src/js"),
+    projectScssPath: path.resolve(__dirname, "src/scss"),
+    projectOutput: path.resolve(__dirname, "dist"),
+    projectWebpack: path.resolve(__dirname, "webpack"),
+};
+
+const projectFiles = {
+    browserSync: {
+        enable: true,
+        host: "localhost",
+        port: 3000,
+
+        mode: "proxy",
+        proxy: "http://itsmiles.local",
+
+        // reload: true,
+        // files: "**/*.php",
+
+        // This setup provides hotswap CSS
+        reload: false,
+        files: [
+            "**/*.php",
+            projectPaths.projectOutput + "/js/*.js",
+            projectPaths.projectOutput + "/css/*.css",
+        ],
+    },
+
+    projectJs: {
+        filename: "js/[name].js",
+        entry: {
+            frontend: projectPaths.projectJsPath + "/frontend.js",
+            backend: projectPaths.projectJsPath + "/backend.js",
+        },
+        rules: {
+            test: /\.js$/,
+        },
+    },
+
+    projectCss: {
+        filename: "css/[name].css",
+        use: "sass", // sass || postcss
+        rules: {
+            sass: {
+                test: /\.(scss|css)$/,
+            },
+            postcss: {
+                test: /\.(pcss|css)$/,
+            },
+        },
+        postCss: projectPaths.projectWebpack + "/postcss.config.js",
+    },
+
+    projectSourceMaps: {
+        enable: true,
+        env: "dev-prod",
+        devtool: "source-map", // source-map || cheap-source-map
+    },
+};
+
+// Merging the projectPaths & projectFiles objects
+const projectOptions = {
+    ...projectPaths,
+    ...projectFiles,
+    projectConfig: {
+        // add extra options here
+    },
+};
+
+// Get the development or production setup based on the script from package.json
+module.exports = (env) => {
+    if (env.NODE_ENV === "production") {
+        return require("./webpack/production.config")(projectOptions);
+    } else {
+        return require("./webpack/development.config")(projectOptions);
+    }
+};
