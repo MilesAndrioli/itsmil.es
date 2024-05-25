@@ -53,9 +53,12 @@ const projectFiles = {
         postCss: projectPaths.projectWebpack + "/postcss.config.js",
     },
 
+    /**
+     * @link https://webpack.js.org/configuration/devtool/
+     */
     projectSourceMaps: {
-        enable: true,
-        env: "dev-prod",
+        enable: false,
+        env: "dev", // dev | dev-prod | prod
         devtool: "source-map", // source-map || cheap-source-map
     },
 };
