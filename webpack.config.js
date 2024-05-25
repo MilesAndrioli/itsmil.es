@@ -16,16 +16,16 @@ const projectFiles = {
         mode: "proxy",
         proxy: "http://itsmiles.local",
 
-        // reload: true,
         // files: "**/*.php",
+        // reload: true,
 
         // This setup provides hotswap CSS
-        reload: false,
         files: [
             "**/*.php",
             projectPaths.projectOutput + "/js/*.js",
             projectPaths.projectOutput + "/css/*.css",
         ],
+        reload: false,
     },
 
     projectJs: {
