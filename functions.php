@@ -36,19 +36,19 @@ if ( ! function_exists( 'enqueue_frontend_dist' ) ) {
 add_action( 'wp_enqueue_scripts', 'enqueue_frontend_dist' );
 
 // Enqueue backend assets.
-// if ( ! function_exists( 'enqueue_backend_dist' ) ) {
-//     function enqueue_backend_dist() {
+if ( ! function_exists( 'enqueue_backend_dist' ) ) {
+    function enqueue_backend_dist() {
         
-//         add_editor_style( 'dist/css/backend.css' );
+        add_editor_style( 'dist/css/backend.css' );
         
-//         wp_enqueue_script(
-//             'backend',
-//             get_template_directory_uri() . '/dist/js/backend.js',
-//             array(), _VER, true
-//         );
-//     }
-// }
-// add_action( 'enqueue_block_editor_assets', 'enqueue_backend_dist' );
+        wp_enqueue_script(
+            'backend',
+            get_template_directory_uri() . '/dist/js/backend.js',
+            array(), _VER, true
+        );
+    }
+}
+add_action( 'enqueue_block_editor_assets', 'enqueue_backend_dist' );
 
 // Auto-load PHP files from the 'includes' directory.
 foreach ( glob( get_template_directory() . '/includes/*.php' ) as $file ) {
