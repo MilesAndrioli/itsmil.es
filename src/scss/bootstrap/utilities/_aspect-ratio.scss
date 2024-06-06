@@ -1,0 +1,18 @@
+$aspect-ratio: (
+    "aspect-ratio": (
+        property: aspect-ratio,
+        class: ratio,
+        responsive: true,
+        values: (
+            1: 1,
+            4x3: calc(4 / 3),
+            3x4: calc(3 / 4),
+            16x9: calc(16 / 9),
+            16x10: calc(16 / 10),
+            21x9: calc(21 / 9),
+            auto: auto,
+        ),
+    ),
+);
+
+$utilities: map-merge($utilities, $aspect-ratio);

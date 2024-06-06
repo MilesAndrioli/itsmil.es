@@ -1,0 +1,20 @@
+$colors: ();
+$grays: ();
+
+$hell: red;
+$ocean: blue;
+$sun: yellow;
+$marble: #e6e1d5;
+$void: #2e3037;
+
+$theme-colors: (
+    "hell": $hell,
+    "ocean": $ocean,
+    "sun": $sun,
+    "marble": $marble,
+    "void": $void,
+);
+
+$body-bg: $void;
+$body-color: $marble;
+$link-color: $ocean;
