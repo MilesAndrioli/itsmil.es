@@ -30,6 +30,7 @@
         "webpackbar": "^5.0.2"
     },
     "dependencies": {
+        "bootstrap": "^5.3.3",
         "gsap": "npm:@gsap/shockingly@^3.12.1"
     }
 }
