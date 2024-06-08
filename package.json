@@ -30,6 +30,8 @@
         "webpackbar": "^5.0.2"
     },
     "dependencies": {
+        "@barba/core": "^2.9.7",
+        "@barba/prefetch": "^2.1.10",
         "bootstrap": "^5.3.3",
         "gsap": "npm:@gsap/shockingly@^3.12.1"
     }
