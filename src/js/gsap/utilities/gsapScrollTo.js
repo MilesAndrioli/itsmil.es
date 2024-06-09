@@ -1,20 +1,15 @@
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+/**
+ * Scrolls to the specified target using GSAP's ScrollSmoother.
+ * @see https://gsap.com/docs/v3/Plugins/ScrollSmoother/scrollTo()
+ */
 export default function gsapScrollTo(
     target,
     smooth = true,
     position = `top ${gsap.getProperty(":root", "--app-header-height")}`
 ) {
     const smoother = ScrollSmoother.get();
-
-    if (
-        typeof target === "number" ||
-        typeof target === "string" ||
-        target instanceof Element
-    ) {
-        smoother.scrollTo(target, smooth, position);
-    } else {
-        console.warn("Invalid target for scrollTo: ", target);
-    }
+    smoother.scrollTo(target, smooth, position);
 }
