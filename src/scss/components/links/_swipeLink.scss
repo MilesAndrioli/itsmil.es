@@ -1,4 +1,4 @@
-.swipeUnderLink {
+.swipeLink {
     position: relative;
 
     &::before {
@@ -21,6 +21,14 @@
         &::before {
             transform-origin: left;
             transform: scaleX(1);
+        }
+    }
+
+    &--ontop {
+        &::before,
+        &::after {
+            height: 100%;
+            mix-blend-mode: difference;
         }
     }
 }
