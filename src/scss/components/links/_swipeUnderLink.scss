@@ -1,0 +1,26 @@
+.swipeUnderLink {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 0.1em;
+        width: 100%;
+
+        transform-origin: right;
+        transform: scaleX(0);
+
+        background-color: currentColor;
+
+        transition: transform var(--cubic-hard);
+    }
+
+    &:hover {
+        &::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    }
+}

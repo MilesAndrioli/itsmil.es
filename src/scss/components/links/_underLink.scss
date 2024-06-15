@@ -1,0 +1,40 @@
+.underLink {
+    --animation-delay: 200ms;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 0.1em;
+        width: 100%;
+
+        background-color: currentColor;
+
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform var(--cubic-hard);
+    }
+
+    &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+        transition-delay: var(--animation-delay);
+    }
+
+    &:hover {
+        &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+            transition-delay: var(--animation-delay);
+        }
+
+        &::after {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition-delay: 0ms;
+        }
+    }
+}

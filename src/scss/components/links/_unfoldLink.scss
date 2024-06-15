@@ -1,0 +1,25 @@
+.unfoldLink {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        transform: scaleX(0);
+
+        background-color: currentColor;
+        mix-blend-mode: difference;
+
+        transition: transform var(--cubic-hard);
+    }
+
+    &:hover {
+        &::before {
+            transform: scaleX(1);
+        }
+    }
+}
