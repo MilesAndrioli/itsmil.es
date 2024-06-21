@@ -8,7 +8,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 export default function gsapScrollTo(
     target,
     smooth = true,
-    position = `top ${gsap.getProperty(":root", "--app-header-height")}`
+    position = `top ${APP_HEADER_HEIGHT}`
 ) {
     const smoother = ScrollSmoother.get();
     smoother.scrollTo(target, smooth, position);
