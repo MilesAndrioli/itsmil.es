@@ -1,0 +1,39 @@
+:root {
+    // Custom Cubic Bezier Easings
+    // Visualizer: https://easings.co?demo=0&duration=600&offset=0&curve=0.8,0.2,0.2,0.8
+    --circ: cubic-bezier(0.75, 0.25, 0.25, 0.75);
+    --cubic: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    --quart: cubic-bezier(0.85, 0.15, 0.15, 0.85);
+
+    // Durations
+    --fast: 400ms;
+    --regular: 600ms;
+    --slow: 800ms;
+    --super-slow: 1200ms;
+    --giga-slow: 1600ms;
+
+    // Fast
+    --circ--fast: var(--fast) var(--circ);
+    --cubic--fast: var(--fast) var(--cubic);
+    --quart--fast: var(--fast) var(--quart);
+
+    // Regular
+    --circ--regular: var(--regular) var(--circ);
+    --cubic--regular: var(--regular) var(--cubic);
+    --quart--regular: var(--regular) var(--quart);
+
+    // Slow
+    --circ--slow: var(--slow) var(--circ);
+    --cubic--slow: var(--slow) var(--cubic);
+    --quart--slow: var(--slow) var(--quart);
+
+    // Super Slow
+    --circ--super-slow: var(--super-slow) var(--circ);
+    --cubic--super-slow: var(--super-slow) var(--cubic);
+    --quart--super-slow: var(--super-slow) var(--quart);
+
+    // Giga Slow
+    --circ--giga-slow: var(--giga-slow) var(--circ);
+    --cubic--giga-slow: var(--giga-slow) var(--cubic);
+    --quart--giga-slow: var(--giga-slow) var(--quart);
+}

@@ -15,7 +15,7 @@
 
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform var(--cubic-hard);
+        transition: transform var(--quart--regular);
     }
 
     &::after {
