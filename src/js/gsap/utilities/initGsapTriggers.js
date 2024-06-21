@@ -4,7 +4,7 @@ import initGsapAos from "../triggers/gsapAos";
 import initGsapRevealer from "../triggers/gsapRevealer";
 
 export default function initGsapTriggers() {
-    if (!ScrollTrigger.isTouch) {
+    if (MNK) {
         initGsapAos();
         initGsapRevealer();
     }

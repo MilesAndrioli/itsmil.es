@@ -7,6 +7,14 @@ console.log(`
 `);
 
 /* +-----------------------------------------+
+|           GLOBALS AREA             		 |
++-----------------------------------------+ */
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+window.MNK = !ScrollTrigger.isTouch;
+window.TOUCH = !!ScrollTrigger.isTouch;
+
+/* +-----------------------------------------+
 |           IMPORTS AREA             		 |
 +-----------------------------------------+ */
 
@@ -22,6 +30,8 @@ import initBarba from "./barba/initBarba";
 import initGsap from "./gsap/initGsap";
 import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
 import killGsapTriggers from "./gsap/utilities/killGsapTriggers";
+// import updateGsapTriggers from "./gsap/utilities/updateGsapTriggers";
+// import refreshGsapTriggers from "./gsap/utilities/refreshGsapTriggers";
 import initGsapEffects from "./gsap/utilities/initGsapEffects";
 import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
 
