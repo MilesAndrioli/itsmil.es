@@ -12,11 +12,12 @@ import gsapAnimations from "../animations/animationsIndex";
 
 export default function initGsapAos() {
     /**
-     * Fetches attribute values with a default fallback.
+     * Fetches attribute values from a DOM element with a default if not set.
+     * This function helps in extracting and converting attribute values needed for animations.
      * @param {HTMLElement} el - The element to fetch attributes from.
      * @param {string} attrName - The attribute name to fetch.
      * @param {*} [defaultValue] - The default value if the attribute is not set.
-     * @returns {*} The attribute value or the default value.
+     * @returns {*} The attribute value or the default value, correctly parsed.
      */
     function getAttribute(el, attrName, defaultValue = null) {
         const value = el.getAttribute(attrName);
@@ -27,6 +28,12 @@ export default function initGsapAos() {
             : defaultValue;
     }
 
+    /**
+     * Sets up default and custom animation settings based on element attributes.
+     * This function centralizes the setup for all animation related settings.
+     * @param {HTMLElement} el - The element for which to set up animation settings.
+     * @returns {Object} A settings object with all necessary animation parameters.
+     */
     function setAnimationSettings(el) {
         const isAfter = el.hasAttribute("aos-after");
         return {
@@ -51,6 +58,15 @@ export default function initGsapAos() {
         };
     }
 
+    /**
+     * Animates a set of elements according to specified animation settings.
+     * This function handles the actual animation logic, applying GSAP animations based on the provided settings.
+     * @param {Array<HTMLElement>} elements - Array of elements to animate.
+     * @param {Object} origin - Initial animation state.
+     * @param {Object} target - Final animation state.
+     * @param {Object} settings - Animation settings including duration, delay, etc.
+     * @param {string} animationType - The type of animation to apply.
+     */
     function setAnimation(elements, origin, target, settings, animationType) {
         elements.forEach((element, index) => {
             let animatedElement = element;
@@ -87,6 +103,9 @@ export default function initGsapAos() {
         });
     }
 
+    /**
+     * Main function to initialize animations on all elements with the 'aos' attribute.
+     */
     function gsapAos(el) {
         const animationType = getAttribute(el, "aos");
 
