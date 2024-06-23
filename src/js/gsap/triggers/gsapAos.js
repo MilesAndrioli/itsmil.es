@@ -49,7 +49,7 @@ export default function initGsapAos() {
             ),
             duration: getAttribute(el, "aos-duration", 1),
             delay: getAttribute(el, "aos-delay", 0.2),
-            stagger: getAttribute(el, "aos-stagger", 0.1),
+            stagger: getAttribute(el, "aos-stagger", 0.05),
             repeat: el.hasAttribute("aos-repeat"),
             scrub: el.hasAttribute("aos-scrub"),
             splitType: getAttribute(el, "split-type", "words"),
@@ -68,28 +68,28 @@ export default function initGsapAos() {
      * @param {string} animationType - The type of animation to apply.
      */
     function setAnimation(elements, origin, target, settings, animationType) {
-        elements.forEach((element, index) => {
-            let animatedElement = element;
+        elements.forEach((el, index) => {
+            let animatedElement = el;
 
             if (animationType.includes("split")) {
-                const split = new SplitText(element, {
+                const split = new SplitText(el, {
                     type: settings.splitType,
                 });
                 gsap.set(split[settings.splitType], origin);
                 animatedElement = split[settings.splitType];
             } else {
-                gsap.set(element, origin);
+                gsap.set(el, origin);
             }
 
             gsap.to(animatedElement, {
                 ...target,
-                delay: settings.delay + index * settings.stagger, // Staggered delay for child elements
+                delay: settings.delay + index * settings.stagger,
                 duration: settings.duration,
                 stagger: animationType.includes("split")
                     ? { each: settings.splitStagger, from: settings.splitFrom }
                     : undefined,
                 scrollTrigger: {
-                    trigger: element,
+                    trigger: el,
                     start: settings.start,
                     end: settings.end,
                     toggleActions: settings.repeat
