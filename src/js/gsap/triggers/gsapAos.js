@@ -41,9 +41,7 @@ export default function initGsapAos() {
 
         let animatedElement = el;
         let { origin, target } = gsapAnimations[animationType];
-
-        const isReverse = el.hasAttribute("aos-reverse");
-        if (isReverse) [origin, target] = [target, origin];
+        if (el.hasAttribute("aos-reverse")) [origin, target] = [target, origin];
 
         const isAfter = el.hasAttribute("aos-after");
         const defaultStart = isAfter ? "bottom center" : "top bottom";
@@ -68,30 +66,57 @@ export default function initGsapAos() {
             const split = new SplitText(el, { type: splitType });
             gsap.set(split[splitType], origin);
             animatedElement = split[splitType];
+        } else if (el.hasAttribute("aos-group-parent")) {
+            const children = el.querySelectorAll("[aos-group-child]");
+            children.forEach((child, index) => {
+                gsap.set(child, origin);
+            });
         } else {
             gsap.set(el, origin);
         }
 
-        gsap.to(animatedElement, {
-            ...target,
-            duration,
-            delay,
-            // ease: "elastic.inOut(1,0.3)",
-            stagger: animationType.includes("split")
-                ? { each: splitStagger, from: splitFrom }
-                : undefined,
-            scrollTrigger: {
-                trigger: el,
-                markers: debug,
-                start,
-                end,
-                toggleActions: repeat
-                    ? "play none none reverse"
-                    : "play none none none",
-                scrub,
-                once: !(scrub || repeat),
-            },
-        });
+        if (el.hasAttribute("aos-group-parent")) {
+            const children = el.querySelectorAll("[aos-group-child]");
+            children.forEach((child, index) => {
+                gsap.to(child, {
+                    ...target,
+                    delay: delay + index * 0.1, // Staggered delay
+                    duration,
+                    scrollTrigger: {
+                        trigger: child,
+                        start,
+                        end,
+                        toggleActions: repeat
+                            ? "play none none reverse"
+                            : "play none none none",
+                        markers: debug,
+                        scrub,
+                        once: !(scrub || repeat),
+                    },
+                });
+            });
+        } else {
+            gsap.to(animatedElement, {
+                ...target,
+                duration,
+                delay,
+                // ease: "elastic.inOut(1,0.3)",
+                stagger: animationType.includes("split")
+                    ? { each: splitStagger, from: splitFrom }
+                    : undefined,
+                scrollTrigger: {
+                    trigger: el,
+                    markers: debug,
+                    start,
+                    end,
+                    toggleActions: repeat
+                        ? "play none none reverse"
+                        : "play none none none",
+                    scrub,
+                    once: !(scrub || repeat),
+                },
+            });
+        }
     }
 
     /**
