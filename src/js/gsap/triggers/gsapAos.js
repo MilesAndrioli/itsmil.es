@@ -27,10 +27,66 @@ export default function initGsapAos() {
             : defaultValue;
     }
 
-    /**
-     * Animates a single HTML element based on data attributes.
-     * @param {HTMLElement} el - The element to animate.
-     */
+    function setAnimationSettings(el) {
+        const isAfter = el.hasAttribute("aos-after");
+        return {
+            start: getAttribute(
+                el,
+                "aos-start",
+                isAfter ? "bottom center" : "top bottom"
+            ),
+            end: getAttribute(
+                el,
+                "aos-end",
+                isAfter ? `bottom top+=${APP_HEADER_HEIGHT}` : "center center"
+            ),
+            duration: getAttribute(el, "aos-duration", 1),
+            delay: getAttribute(el, "aos-delay", 0.2),
+            stagger: getAttribute(el, "aos-stagger", 0.1),
+            repeat: el.hasAttribute("aos-repeat"),
+            scrub: el.hasAttribute("aos-scrub"),
+            splitType: getAttribute(el, "split-type", "words"),
+            splitStagger: getAttribute(el, "split-stagger", 0.05),
+            splitFrom: getAttribute(el, "split-from", "start"),
+        };
+    }
+
+    function setAnimation(elements, origin, target, settings, animationType) {
+        elements.forEach((element, index) => {
+            let animatedElement = element;
+
+            if (animationType.includes("split")) {
+                const split = new SplitText(element, {
+                    type: settings.splitType,
+                });
+                gsap.set(split[settings.splitType], origin);
+                animatedElement = split[settings.splitType];
+            } else {
+                gsap.set(element, origin);
+            }
+
+            gsap.to(animatedElement, {
+                ...target,
+                delay: settings.delay + index * settings.stagger, // Staggered delay for child elements
+                duration: settings.duration,
+                stagger: animationType.includes("split")
+                    ? { each: settings.splitStagger, from: settings.splitFrom }
+                    : undefined,
+                scrollTrigger: {
+                    trigger: element,
+                    start: settings.start,
+                    end: settings.end,
+                    toggleActions: settings.repeat
+                        ? "play none none reverse"
+                        : "play none none none",
+                    markers: debug,
+                    scrub: settings.scrub,
+                    once: !(settings.scrub || settings.repeat),
+                },
+            });
+        });
+    }
+
     function gsapAos(el) {
         const animationType = getAttribute(el, "aos");
 
@@ -39,90 +95,23 @@ export default function initGsapAos() {
             return;
         }
 
-        let animatedElement = el;
         let { origin, target } = gsapAnimations[animationType];
         if (el.hasAttribute("aos-reverse")) [origin, target] = [target, origin];
 
-        const isAfter = el.hasAttribute("aos-after");
-        const defaultStart = isAfter ? "bottom center" : "top bottom";
-        const defaultEnd = isAfter
-            ? `bottom top+=${APP_HEADER_HEIGHT}`
-            : "center center";
-
-        const duration = getAttribute(el, "aos-duration", 1);
-        const delay = getAttribute(el, "aos-delay", 0.2);
-        const start = getAttribute(el, "aos-start", defaultStart);
-        const end = getAttribute(el, "aos-end", defaultEnd);
-        const repeat = el.hasAttribute("aos-repeat");
-        const scrub = el.hasAttribute("aos-scrub");
-
-        let splitType = getAttribute(el, "split-type", "words");
-        const splitStagger = getAttribute(el, "split-stagger", 0.05);
-        const splitFrom = getAttribute(el, "split-from", "start");
-
-        if (ScrollTrigger.isTouch && splitType === "chars") splitType = "words";
-
-        if (animationType.includes("split")) {
-            const split = new SplitText(el, { type: splitType });
-            gsap.set(split[splitType], origin);
-            animatedElement = split[splitType];
-        } else if (el.hasAttribute("aos-group-parent")) {
-            const children = el.querySelectorAll("[aos-group-child]");
-            children.forEach((child, index) => {
-                gsap.set(child, origin);
-            });
-        } else {
-            gsap.set(el, origin);
-        }
+        const settings = setAnimationSettings(el);
 
         if (el.hasAttribute("aos-group-parent")) {
             const children = el.querySelectorAll("[aos-group-child]");
-            children.forEach((child, index) => {
-                gsap.to(child, {
-                    ...target,
-                    delay: delay + index * 0.1, // Staggered delay
-                    duration,
-                    scrollTrigger: {
-                        trigger: child,
-                        start,
-                        end,
-                        toggleActions: repeat
-                            ? "play none none reverse"
-                            : "play none none none",
-                        markers: debug,
-                        scrub,
-                        once: !(scrub || repeat),
-                    },
-                });
-            });
+            setAnimation(children, origin, target, settings, animationType);
         } else {
-            gsap.to(animatedElement, {
-                ...target,
-                duration,
-                delay,
-                // ease: "elastic.inOut(1,0.3)",
-                stagger: animationType.includes("split")
-                    ? { each: splitStagger, from: splitFrom }
-                    : undefined,
-                scrollTrigger: {
-                    trigger: el,
-                    markers: debug,
-                    start,
-                    end,
-                    toggleActions: repeat
-                        ? "play none none reverse"
-                        : "play none none none",
-                    scrub,
-                    once: !(scrub || repeat),
-                },
-            });
+            setAnimation([el], origin, target, settings, animationType);
         }
     }
 
-    /**
-     * Initializes animations on elements with the 'aos' attribute using GSAP.
-     */
     const animatedElements = document.querySelectorAll("[aos]");
-    consoleLog(`%c${animatedElements.length}%c AOS triggers found`, "info");
+    consoleLog(
+        `%cTotal AOS triggers found: ${animatedElements.length}`,
+        "info"
+    );
     animatedElements.forEach(gsapAos);
 }
