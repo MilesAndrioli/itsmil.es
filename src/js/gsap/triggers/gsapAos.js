@@ -119,8 +119,8 @@ export default function initGsapAos() {
 
         const settings = setAnimationSettings(el);
 
-        if (el.hasAttribute("aos-group-parent")) {
-            const children = el.querySelectorAll("[aos-group-child]");
+        if (el.hasAttribute("aos-parent")) {
+            const children = el.querySelectorAll("[aos-child]");
             setAnimation(children, origin, target, settings, animationType);
         } else {
             setAnimation([el], origin, target, settings, animationType);
