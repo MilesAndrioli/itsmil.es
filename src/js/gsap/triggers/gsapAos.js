@@ -1,4 +1,4 @@
-import { createDebugLogger } from "../../utilities/debugging";
+import { createDebugLogger } from "../../utilities/debugger";
 const debug = true;
 const consoleLog = createDebugLogger(debug);
 
@@ -19,12 +19,13 @@ export default function initGsapAos() {
      * @param {*} [defaultValue] - The default value if the attribute is not set.
      * @returns {*} The attribute value or the default value, correctly parsed.
      */
-    function getAttribute(el, attrName, defaultValue = null) {
-        const value = el.getAttribute(attrName);
-        return value !== null
-            ? isNaN(value)
-                ? value
-                : parseFloat(value)
+    function getAttribute(el, attrName, defaultValue) {
+        const attrValue = el.getAttribute(attrName);
+
+        return attrValue !== null
+            ? isNaN(attrValue)
+                ? attrValue
+                : parseFloat(attrValue)
             : defaultValue;
     }
 
@@ -48,13 +49,14 @@ export default function initGsapAos() {
                 isAfter ? `bottom top+=${APP_HEADER_HEIGHT}` : "center center"
             ),
             duration: getAttribute(el, "aos-duration", 1),
+            ease: getAttribute(el, "aos-ease"),
             delay: getAttribute(el, "aos-delay", 0.2),
             stagger: getAttribute(el, "aos-stagger", 0.05),
-            repeat: el.hasAttribute("aos-repeat"),
+            once: el.hasAttribute("aos-once"),
             scrub: el.hasAttribute("aos-scrub"),
             splitType: getAttribute(el, "split-type", "words"),
             splitStagger: getAttribute(el, "split-stagger", 0.05),
-            splitFrom: getAttribute(el, "split-from", "start"),
+            splitFrom: getAttribute(el, "split-from"),
         };
     }
 
@@ -65,39 +67,39 @@ export default function initGsapAos() {
      * @param {Object} origin - Initial animation state.
      * @param {Object} target - Final animation state.
      * @param {Object} settings - Animation settings including duration, delay, etc.
-     * @param {string} animationType - The type of animation to apply.
+     * @param {string} animation - The animation to apply.
      */
-    function setAnimation(elements, origin, target, settings, animationType) {
+    function setAnimation(elements, origin, target, settings, animation) {
         elements.forEach((el, index) => {
-            let animatedElement = el;
-
-            if (animationType.includes("split")) {
+            if (animation.includes("split")) {
                 const split = new SplitText(el, {
                     type: settings.splitType,
                 });
                 gsap.set(split[settings.splitType], origin);
-                animatedElement = split[settings.splitType];
+                el = split[settings.splitType];
             } else {
                 gsap.set(el, origin);
             }
 
-            gsap.to(animatedElement, {
+            gsap.to(el, {
                 ...target,
-                delay: settings.delay + index * settings.stagger,
                 duration: settings.duration,
-                stagger: animationType.includes("split")
+                ease: settings.ease,
+                delay: settings.delay + index * settings.stagger,
+                stagger: animation.includes("split")
                     ? { each: settings.splitStagger, from: settings.splitFrom }
                     : undefined,
                 scrollTrigger: {
                     trigger: el,
                     start: settings.start,
                     end: settings.end,
-                    toggleActions: settings.repeat
-                        ? "play none none reverse"
-                        : "play none none none",
-                    markers: debug,
+                    toggleActions: settings.once
+                        ? "play none none none"
+                        : "play none none reverse",
                     scrub: settings.scrub,
-                    once: !(settings.scrub || settings.repeat),
+                    once: settings.once,
+                    markers: debug,
+                    // id: el.tagName,
                 },
             });
         });
@@ -107,23 +109,23 @@ export default function initGsapAos() {
      * Main function to initialize animations on all elements with the 'aos' attribute.
      */
     function gsapAos(el) {
-        const animationType = getAttribute(el, "aos");
+        const animation = getAttribute(el, "aos");
 
-        if (!gsapAnimations[animationType]) {
-            consoleLog(`Invalid animation type: %c${animationType}`, "error");
+        if (!gsapAnimations[animation]) {
+            consoleLog(`Invalid animation %c${animation}`, "error");
             return;
         }
 
-        let { origin, target } = gsapAnimations[animationType];
+        let { origin, target } = gsapAnimations[animation];
         if (el.hasAttribute("aos-reverse")) [origin, target] = [target, origin];
 
         const settings = setAnimationSettings(el);
 
         if (el.hasAttribute("aos-parent")) {
             const children = el.querySelectorAll("[aos-child]");
-            setAnimation(children, origin, target, settings, animationType);
+            setAnimation(children, origin, target, settings, animation);
         } else {
-            setAnimation([el], origin, target, settings, animationType);
+            setAnimation([el], origin, target, settings, animation);
         }
     }
 
