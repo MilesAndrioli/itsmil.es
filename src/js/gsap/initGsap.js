@@ -10,6 +10,10 @@ export default function initGsap() {
         ease: CustomEase.create("cubic", "M0,0 C0.8,0.2, 0.2,0.8, 1,1"),
     });
 
+    gsap.config({
+        force3D: true,
+    });
+
     ScrollSmoother.create({
         effects: MNK,
         effectsPadding: 800,
