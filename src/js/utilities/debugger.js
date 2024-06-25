@@ -8,6 +8,9 @@ const debugStyles = {
     default: `border: 1px solid; color: #fff; ${baseStyle}`,
 };
 
+console.log("TESTING COMMITW");
+console.log("TESTING COMMITW");
+
 /**
  * Creates a conditional debug logger with support for styled console message.
  *
