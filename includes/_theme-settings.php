@@ -23,7 +23,7 @@ if (!function_exists('theme_settings')) {
          */
         register_nav_menus(
             array(
-                'app-header-navigation' => esc_html__('App Header Navigation', 'itsmiles'),
+                'app-header-navigation' => esc_html__('App Header Navigation', 'sandtons'),
             )
         );
     }

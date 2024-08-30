@@ -14,7 +14,7 @@ const projectFiles = {
         port: 3000,
 
         mode: "proxy",
-        proxy: "http://itsmiles.local",
+        proxy: "https://mediumvioletred-camel-432906.hostingersite.com",
 
         // files: "**/*.php",
         // reload: true,
