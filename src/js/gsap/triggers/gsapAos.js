@@ -1,5 +1,5 @@
 import { createDebugLogger } from "../../utilities/debugger";
-const debug = true;
+const debug = false;
 const consoleLog = createDebugLogger(debug);
 
 import { gsap } from "gsap";

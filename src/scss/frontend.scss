@@ -1,0 +1,68 @@
+// #region Bootstrap Passthrough
+/**
+ * Due to stripping Bootstrap SCSS as a whole from frontend.scss and importing
+ * it via JavaScript (frontend.js) to reduce custom SCSS compiling times
+ * tremendously, we lose the capability of using $variables, @includes,
+ * @extends, @etc. in our custom SCSS. In order to keep that functionality,
+ * we are forced to import those dependencies (only those we need).
+ */
+@import "bootstrap/scss/functions";
+@import "bootstrap/definitions/my-bootstrap-definitions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/containers";
+// #endregion
+
+@import "definitions/fonts";
+@import "definitions/typography";
+@import "definitions/colors";
+@import "definitions/misc";
+@import "definitions/easings";
+
+@import "components/app-loader";
+@import "components/app-header";
+@import "components/app-main";
+@import "components/app-footer";
+
+@import "components/links/yoyoLink";
+@import "components/links/swipeLink";
+@import "components/links/unfoldLink";
+
+.asasd {
+    color: $sun;
+}
+
+.container-narrow {
+    @extend .container;
+    @include media-breakpoint-up(md) {
+        max-width: 756px;
+    }
+}
+
+.container-wide {
+    @extend .container;
+    @include media-breakpoint-up(xxl) {
+        max-width: 1680px;
+    }
+}
+
+.yoyoLink,
+.swipeLink {
+    color: #fff;
+    text-transform: uppercase;
+
+    &--ontop {
+        padding: 20px 40px;
+        border: 1px solid currentColor;
+        background-color: transparent;
+    }
+}
+
+.unfoldLink {
+    color: #fff;
+    text-transform: uppercase;
+
+    padding: 20px 40px;
+    border: 1px solid currentColor;
+    background-color: transparent;
+}
