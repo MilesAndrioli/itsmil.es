@@ -1,14 +1,16 @@
 console.log(`
- _   _      _ _         _____ _
-| | | | ___| | | ___   |_   _| |__   ___ _ __ ___
-| |_| |/ _ \\ | |/ _ \\    | | | '_ \\ / _ \\ '__/ _ \\
-|  _  |  __/ | | (_) |   | | | | | |  __/ | |  __/
-|_| |_|\\___|_|_|\\___/    |_| |_| |_|\\___|_|  \\___|
+    _   _      _ _         _____ _
+    | | | | ___| | | ___   |_   _| |__   ___ _ __ ___
+    | |_| |/ _ \\ | |/ _ \\    | | | '_ \\ / _ \\ '__/ _ \\
+    |  _  |  __/ | | (_) |   | | | | | |  __/ | |  __/
+    |_| |_|\\___|_|_|\\___/    |_| |_| |_|\\___|_|  \\___|
 `);
 
 /* +-----------------------------------------+
 |           GLOBALS AREA             		 |
 +-----------------------------------------+ */
+
+window.DEBUG = true;
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 window.MNK = !ScrollTrigger.isTouch;
@@ -22,18 +24,9 @@ window.TOUCH = !!ScrollTrigger.isTouch;
 import "../scss/bootstrap/bootstrap.scss";
 import "../scss/frontend.scss";
 
-// Barba
-import barba from "@barba/core";
-import initBarba from "./barba/initBarba";
-
 // GSAP
 import initGsap from "./gsap/initGsap";
 import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
-import killGsapTriggers from "./gsap/utilities/killGsapTriggers";
-// import updateGsapTriggers from "./gsap/utilities/updateGsapTriggers";
-// import refreshGsapTriggers from "./gsap/utilities/refreshGsapTriggers";
-import initGsapEffects from "./gsap/utilities/initGsapEffects";
-import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
 
 // Utilities
 import getDimensions from "./utilities/getDimensions";
@@ -46,8 +39,8 @@ import exitLoader from "./utilities/exitLoader";
 // DOC Ready
 function documentReady() {
     getDimensions("#app-header", "height");
+    getDimensions("#wpadminbar", "height");
 
-    initBarba();
     initGsap();
     initGsapTriggers();
 }
@@ -55,18 +48,6 @@ document.addEventListener("DOMContentLoaded", documentReady, false);
 
 // WINDOW Load
 function windowLoad() {
-    exitLoader("#app-loader");
+    exitLoader();
 }
 window.addEventListener("load", windowLoad, false);
-
-// BARBA After Leave
-barba.hooks.afterLeave(() => {
-    killGsapTriggers();
-});
-
-// BARBA After
-barba.hooks.after(() => {
-    initGsapTriggers();
-    initGsapEffects();
-    gsapScrollTo(0);
-});
