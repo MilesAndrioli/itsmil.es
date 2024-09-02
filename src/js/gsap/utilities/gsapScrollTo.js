@@ -1,6 +1,8 @@
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 
+gsap.registerPlugin(ScrollSmoother);
+
 /**
  * Scrolls to the specified target using GSAP's ScrollSmoother.
  * @see https://gsap.com/docs/v3/Plugins/ScrollSmoother/scrollTo()
