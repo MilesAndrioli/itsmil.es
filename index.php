@@ -4,8 +4,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-get_header(); ?>
-
-<h1>INDEX</h1>
-
-<?php get_footer();
+get_header();
+the_content();
+get_footer();
