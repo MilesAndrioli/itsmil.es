@@ -1,11 +1,9 @@
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import initGsapAos from "../triggers/gsapAos";
-import initGsapRevealer from "../triggers/gsapRevealer";
+import initGsapUnveil from "../triggers/gsapUnveil";
 
 export default function initGsapTriggers() {
     if (MNK) {
         initGsapAos();
-        initGsapRevealer();
+        initGsapUnveil();
     }
 }
