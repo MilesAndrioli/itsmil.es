@@ -9,7 +9,7 @@ const projectPaths = {
 
 const projectFiles = {
     browserSync: {
-        enable: true,
+        enable: false,
         host: "localhost",
         port: 3000,
 
