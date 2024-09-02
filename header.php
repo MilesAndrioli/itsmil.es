@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 <body <?= body_class(); ?>>
 
     <!-- App Wrapper -->
-    <div id="app-wrapper" data-barba="wrapper">
+    <div id="app-wrapper">
 
         <!-- App Loader -->
         <?php get_template_part('parts/app-loader'); ?>
@@ -38,4 +38,4 @@ if (!defined('ABSPATH')) {
                 <div id="app-noise"></div>
 
                 <!-- App Main -->
-                <main id="app-main" data-barba="container" data-barba-namespace="<?= get_the_title(); ?>">
+                <main id="app-main">
