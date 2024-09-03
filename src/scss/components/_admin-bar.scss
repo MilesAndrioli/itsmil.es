@@ -10,7 +10,7 @@
         position: absolute;
         top: 100%;
         left: 0;
-        height: var(--WPADMINBAR_HEIGHT, 32px);
+        height: calc(var(--WPADMINBAR_HEIGHT, 32px) / 2);
         width: 100%;
     }
 
