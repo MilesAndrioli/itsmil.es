@@ -12,7 +12,6 @@ if (!function_exists('theme_settings')) {
     {
         /**
          * Add support for Backend Styling.
-         *
          * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
          */
         add_theme_support('editor-styles');
@@ -23,9 +22,17 @@ if (!function_exists('theme_settings')) {
          */
         register_nav_menus(
             array(
-                'app-header-navigation' => esc_html__('App Header Navigation', 'sandtons'),
+                'left-header-navigation'    => 'Left Header Navigation',
+                'right-header-navigation'   => 'Right Header Navigation',
+                'mobile-header-navigation'  => 'Mobile Header Navigation',
             )
         );
+
+        /**
+         * Add support for WordPress Theme logo feature.
+         * @link https://developer.wordpress.org/themes/functionality/custom-logo/
+         */
+		add_theme_support( 'custom-logo' );
     }
     add_action('after_setup_theme', 'theme_settings');
 }
