@@ -1,0 +1,7 @@
+#app-header,
+#app-footer {
+    .custom-logo {
+        max-width: clamp(8.75rem, 8.621vw + 3.405rem, 13.75rem);
+        height: auto;
+    }
+}
