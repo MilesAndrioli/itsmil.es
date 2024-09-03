@@ -7,11 +7,9 @@ if (!defined('ABSPATH')) {
 ?>
 
 <footer id="app-footer" unveil-wrapper>
-    <div class="container">
-        <div unveil-target>
-            <h2>FOOTER</h2>
-            <h2>FOOTER</h2>
-            <h2>FOOTER</h2>
-        </div>
+    <div class="container" unveil-target>
+        <h2 aos="split-up-clip-down" split-type="chars">FOOTER</h2>
+        <h2 aos="split-up-clip-down" split-type="chars">FOOTER</h2>
+        <h2 aos="split-up-clip-down" split-type="chars">FOOTER</h2>
     </div>
 </footer>
