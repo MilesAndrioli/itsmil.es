@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
     <?php wp_head(); ?>
 </head>
 
-<body <?= body_class(); ?>>
+<body <?php echo body_class(); ?>>
 
     <!-- App Wrapper -->
     <div id="app-wrapper">
