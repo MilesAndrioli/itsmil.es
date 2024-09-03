@@ -1,8 +1,9 @@
 :root {
-    // Custom Cubic Bezier Easings
-    // Visualizer: https://easings.co?demo=0&duration=600&offset=0&curve=0.8,0.2,0.2,0.8
+    // https://easings.co?demo=0&duration=600&offset=0&curve=0.75,0.25,0.25,0.75
     --circ: cubic-bezier(0.75, 0.25, 0.25, 0.75);
+    // https://easings.co?demo=0&duration=600&offset=0&curve=0.8,0.2,0.2,0.8
     --cubic: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    // https://easings.co?demo=0&duration=600&offset=0&curve=0.85,0.15,0.15,0.85
     --quart: cubic-bezier(0.85, 0.15, 0.15, 0.85);
 
     // Durations
