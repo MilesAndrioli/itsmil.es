@@ -8,8 +8,21 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul {
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+a {
+    text-decoration: none;
+}
+
+.avec-serif {
+    font-family: $font-family-serif;
+}
+
+.sans-serif {
+    font-family: $font-family-sans-serif;
 }
