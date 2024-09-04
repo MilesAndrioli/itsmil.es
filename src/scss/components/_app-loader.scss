@@ -1,0 +1,20 @@
+$loaderStyle: "fill-logo--right"; // simple || fill-logo--up/down/right/left
+
+#app-loader {
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bs-ivory);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity var(--quart--slow);
+}
+
+body.page--is-ready #app-loader {
+    opacity: 0;
+    pointer-events: none;
+}
