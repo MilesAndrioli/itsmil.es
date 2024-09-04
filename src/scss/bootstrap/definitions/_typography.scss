@@ -1,0 +1,22 @@
+// #region Font Family
+$font-family-fallback: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+
+$font-family-sans-serif: "Poppins", #{$font-family-fallback};
+$font-family-serif: "Playfair Display", #{$font-family-fallback};
+
+$headings-font-family: $font-family-serif;
+
+// #region Font Size
+$h1-font-size: clamp(2rem, 3vw + 1.4rem, 5rem);
+$h2-font-size: clamp(1.625rem, 0.5vw + 1.525rem, 2.125rem);
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 0.875rem;
+
+// #region Line Height
+$line-height-base: 1.875;
+
+// #region Font Weight
+$headings-font-weight: 400;
