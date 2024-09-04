@@ -1,20 +1,25 @@
 $colors: ();
 $grays: ();
 
-$hell: red;
-$ocean: blue;
-$sun: yellow;
-$marble: #e6e1d5;
-$void: #2e3037;
-
 $theme-colors: (
-    "hell": $hell,
-    "ocean": $ocean,
-    "sun": $sun,
-    "marble": $marble,
-    "void": $void,
+    // Pure white
+    "snow": #fff,
+    // Very light, slightly warm grey
+    "ivory": #f3f0eb,
+    // Light grey
+    "pearl": #e4e4e4,
+    // Medium grey
+    "ash": #d9d9d9,
+    // Standard grey
+    "slate": #878787,
+    // Dark grey
+    "granite": #3f3e3e,
+    // Very dark grey, almost black
+    "coal": #1e1e1e,
+    // Pure black
+    "onyx": #000
 );
 
-$body-bg: $void;
-$body-color: $marble;
-$link-color: $ocean;
+$body-bg: map-get($theme-colors, "snow");
+$body-color: map-get($theme-colors, "onyx");
+$link-color: map-get($theme-colors, "granite");
