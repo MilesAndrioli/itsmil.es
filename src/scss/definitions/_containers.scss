@@ -1,0 +1,13 @@
+.container-narrow {
+    @extend .container;
+    @include media-breakpoint-up(md) {
+        max-width: 756px;
+    }
+}
+
+.container-wide {
+    @extend .container;
+    @include media-breakpoint-up(xxl) {
+        max-width: 1680px;
+    }
+}
