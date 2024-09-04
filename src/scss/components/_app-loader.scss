@@ -18,3 +18,80 @@ body.page--is-ready #app-loader {
     opacity: 0;
     pointer-events: none;
 }
+
+@mixin clipAnimation($name, $startingClip, $transitioningClip, $endingClip) {
+    animation: $name 2400ms infinite var(--quart);
+
+    @keyframes #{$name} {
+        0% {
+            opacity: var(--initial-opacity);
+            clip-path: $startingClip;
+        }
+        50% {
+            opacity: 100%;
+            clip-path: $transitioningClip;
+        }
+        100% {
+            opacity: var(--initial-opacity);
+            clip-path: $endingClip;
+        }
+    }
+}
+
+@if $loaderStyle ==
+    "fill-logo--up" or
+    "fill-logo--down" or
+    "fill-logo--right" or
+    "fill-logo--left"
+{
+    #app-loader {
+        --initial-opacity: 10%;
+    }
+
+    .app-loader__image {
+        &-bg {
+            opacity: var(--initial-opacity);
+            position: absolute;
+        }
+
+        &-filler {
+            @media (prefers-reduced-motion: no-preference) {
+                @if $loaderStyle == "fill-logo--up" {
+                    @include clipAnimation(
+                        clipUp,
+                        polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%),
+                        polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%),
+                        polygon(0% 0%, 100% 0, 100% 0%, 0% 0%)
+                    );
+                }
+
+                @if $loaderStyle == "fill-logo--down" {
+                    @include clipAnimation(
+                        clipDown,
+                        polygon(0% 0%, 100% 0, 100% 0%, 0% 0%),
+                        polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%),
+                        polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)
+                    );
+                }
+
+                @if $loaderStyle == "fill-logo--right" {
+                    @include clipAnimation(
+                        clipRight,
+                        polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%),
+                        polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%),
+                        polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)
+                    );
+                }
+
+                @if $loaderStyle == "fill-logo--left" {
+                    @include clipAnimation(
+                        clipLeft,
+                        polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%),
+                        polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%),
+                        polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)
+                    );
+                }
+            }
+        }
+    }
+}
