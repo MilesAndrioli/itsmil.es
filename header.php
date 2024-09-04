@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
         <?php get_template_part('parts/app-loader'); ?>
 
         <!-- App Filter VFX -->
-        <div id="app-filter"></div>
+        <?php get_template_part('parts/app-filter'); ?>
 
         <!-- App Header -->
         <?php get_template_part('parts/app-header'); ?>
@@ -35,7 +35,7 @@ if (!defined('ABSPATH')) {
             <div id="smooth-content">
 
                 <!-- App Noise VFX -->
-                <div id="app-noise"></div>
+                <?php get_template_part('parts/app-noise'); ?>
 
                 <!-- App Main -->
                 <main id="app-main">
