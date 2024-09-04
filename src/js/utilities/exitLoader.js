@@ -16,6 +16,11 @@ export default function exitLoader(target = "#app-loader") {
             "The page is ready, the Loader has been %cdismissed",
             "success"
         );
+
+        setTimeout(() => {
+            loader.remove();
+            consoleLog("The Loader has been %cdestroyed", "success");
+        }, 3000);
     } else {
         consoleLog("Loader element %cnot found", "error");
     }
