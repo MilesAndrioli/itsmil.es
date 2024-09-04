@@ -58,7 +58,7 @@ if (!function_exists('enqueue_backend_dist')) {
 }
 add_action('enqueue_block_editor_assets', 'enqueue_backend_dist');
 
-// Auto-load PHP files from the 'includes' directory.
+// Auto-load PHP files which name starts with '_' from the 'includes' directory.
 foreach (glob(get_template_directory() . '/includes/_*.php') as $file) {
     require_once $file;
 }
