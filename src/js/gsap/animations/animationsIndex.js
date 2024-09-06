@@ -1,10 +1,19 @@
-const context = require.context(".", false, /\.js$/);
+/**
+ * Dynamically imports all JavaScript modules in the current directory (excluding 'animationsIndex.js')
+ * and combines their default exports into a single object.
+ */
 
-const gsapAnimations = context
-    .keys()
-    .filter((file) => file !== "./animationsIndex.js")
-    .reduce((acc, file) => {
-        return { ...acc, ...context(file).default };
-    }, {});
+const context = require.context(".", false, /\.js$/);
+const gsapAnimations = {};
+
+context.keys().forEach((file) => {
+    if (file !== "./animationsIndex.js") {
+        try {
+            Object.assign(gsapAnimations, context(file).default);
+        } catch (error) {
+            console.error(`Failed to load ${file}:`, error);
+        }
+    }
+});
 
 export default gsapAnimations;
