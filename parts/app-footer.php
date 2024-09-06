@@ -6,10 +6,10 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<footer id="app-footer" class="bg-ivory" unveil-wrapper>
+<footer id="app-footer" class="bg-ivory py-8" unveil-wrapper>
     <div class="container" unveil-target>
-        <h2 aos="split-up-clip-down" split-type="chars">FOOTER</h2>
-        <h2 aos="split-up-clip-down" split-type="chars">FOOTER</h2>
-        <h2 aos="split-up-clip-down" split-type="chars">FOOTER</h2>
+        <h1 aos="split-up-clip-down" split-type="chars">FOOTER</h1>
+        <h1 aos="split-up-clip-down" split-type="chars">FOOTER</h1>
+        <h1 aos="split-up-clip-down" split-type="chars">FOOTER</h1>
     </div>
 </footer>

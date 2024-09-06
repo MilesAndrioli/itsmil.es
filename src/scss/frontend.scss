@@ -1,0 +1,74 @@
+/*
+ * We faced a performance challenge when compiling SCSS with Bootstrap.
+ * Importing the full Bootstrap library into our `frontend.scss` caused long
+ * compile times. On the other hand, importing Bootstrap via JavaScript 
+ * (`frontend.js`) dramatically improved performance but prevented us from
+ * using key Bootstrap SCSS features like @extend, map-get, and mixins in our custom
+ * SCSS files.
+ *
+ * To solve this, we are selectively importing only the necessary Bootstrap SCSS 
+ * utilities into our `frontend.scss`. This allows us to:
+ *   - Maintain access to important Bootstrap SCSS features.
+ *   - Keep compile times fast when editing custom SCSS.
+ *
+ * Note: The full Bootstrap CSS is still imported via `frontend.js`, but this 
+ * hybrid approach optimizes both performance and functionality.
+ * 
+ * If you're adding more Bootstrap features and find you're importing too many 
+ * individual files, consider importing Bootstrap entirely in `frontend.scss` 
+ * despite the longer compile times. Don't forget to strip it from `frontend.js`.
+ */
+
+//  #region Bootstrap Essentials
+@import "bootstrap/scss/functions";
+@import "bootstrap/definitions/my-bootstrap-definitions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/containers";
+
+// #region Definitions
+@import "definitions/fonts";
+@import "definitions/typography";
+@import "definitions/misc";
+@import "definitions/easings";
+@import "definitions/containers";
+
+// #region Components
+@import "components/logo";
+@import "components/app-loader";
+@import "components/app-header";
+@import "components/app-main";
+@import "components/app-filter";
+@import "components/scrollbar";
+
+@import "components/links/yoyoLink";
+@import "components/links/swipeLink";
+@import "components/links/unfoldLink";
+
+@import "components/admin-bar";
+
+// .yoyoLink,
+// .swipeLink {
+//     color: #fff;
+//     text-transform: uppercase;
+
+//     &--ontop {
+//         padding: 20px 40px;
+//         border: 1px solid currentColor;
+//         background-color: transparent;
+//     }
+// }
+
+// .unfoldLink {
+//     color: #fff;
+//     text-transform: uppercase;
+
+//     padding: 20px 40px;
+//     border: 1px solid currentColor;
+//     background-color: transparent;
+// }
+
+.grid > div,
+.row > div {
+    border: 1px solid var(--bs-ivory);
+}
