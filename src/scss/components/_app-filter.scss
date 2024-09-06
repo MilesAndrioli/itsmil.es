@@ -1,0 +1,12 @@
+#app-filter {
+    position: fixed;
+    z-index: map-get($zindex-levels, 10);
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 40%);
+    mix-blend-mode: overlay;
+    // mix-blend-mode: soft-light;
+    // backdrop-filter: saturate(150%);
+}
