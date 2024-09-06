@@ -14,12 +14,15 @@ $theme-colors: (
     "slate": #878787,
     // Dark grey
     "granite": #3f3e3e,
+    // No description
+    "charcoal": #27272a,
     // Very dark grey, almost black
     "coal": #1e1e1e,
     // Pure black
     "onyx": #000
 );
 
-$body-bg: map-get($theme-colors, "snow");
-$body-color: map-get($theme-colors, "onyx");
-$link-color: map-get($theme-colors, "granite");
+$body-bg: map-get($theme-colors, "coal");
+$border-color: map-get($theme-colors, "charcoal");
+$body-color: map-get($theme-colors, "snow");
+$link-color: map-get($theme-colors, "ivory");
