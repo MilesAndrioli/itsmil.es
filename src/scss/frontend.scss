@@ -24,14 +24,12 @@
 @import "bootstrap/definitions/my-bootstrap-definitions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
-@import "bootstrap/scss/containers";
 
 // #region Definitions
 @import "definitions/fonts";
 @import "definitions/typography";
 @import "definitions/misc";
 @import "definitions/easings";
-@import "definitions/containers";
 
 // #region Components
 @import "components/logo";
