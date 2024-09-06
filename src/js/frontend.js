@@ -10,9 +10,9 @@ console.log(`
 |           GLOBALS AREA             		 |
 +-----------------------------------------+ */
 
-window.DEBUG = true;
-
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+window.DEBUG = true;
 window.MNK = !ScrollTrigger.isTouch;
 window.TOUCH = !!ScrollTrigger.isTouch;
 
