@@ -41,6 +41,7 @@ const getDimensions = (selector, dimension = "both") => {
 
         // Define JS Global Variable
         window[`${targetName}_HEIGHT`] = targetRect.height;
+
         consoleLog(`${selector} %cheight = ${targetRect.height}px`);
     }
 
@@ -55,6 +56,7 @@ const getDimensions = (selector, dimension = "both") => {
 
         // Define JS Global Variable
         window[`${targetName}_WIDTH`] = targetRect.width;
+
         consoleLog(`${selector} %cwidth = ${targetRect.width}px`);
     }
 };
