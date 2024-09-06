@@ -6,18 +6,9 @@ if (!defined('ABSPATH')) {
 
 get_header(); ?>
 
-<section>
+<section class="min-vh-50 d-flex align-items-end text-end">
     <div class="container">
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
-        <h1>404</h1>
+        <div class="h1">404</div>
     </div>
 </section>
 
