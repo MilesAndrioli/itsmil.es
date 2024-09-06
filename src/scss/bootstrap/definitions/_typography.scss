@@ -7,13 +7,6 @@ $font-family-serif: "Playfair Display", #{$font-family-fallback};
 
 $headings-font-family: $font-family-serif;
 
-.avec-serif {
-    font-family: $font-family-serif;
-}
-.sans-serif {
-    font-family: $font-family-sans-serif;
-}
-
 // #region Font Size
 $h1-font-size: clamp(2rem, 3vw + 1.4rem, 5rem);
 $h2-font-size: clamp(1.625rem, 0.5vw + 1.525rem, 2.125rem);
