@@ -2,10 +2,10 @@ $loaderStyle: "fill-logo--right"; // simple || fill-logo--up/down/right/left
 
 #app-loader {
     position: fixed;
-    z-index: 2;
+    z-index: map-get($zindex-levels, 11);
     height: 100%;
     width: 100%;
-    background-color: var(--bs-ivory);
+    background-color: var(--ivory);
 
     display: flex;
     align-items: center;
