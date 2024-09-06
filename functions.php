@@ -17,44 +17,38 @@ if (!defined('_VER')) {
 }
 
 // Enqueue frontend assets.
-if (!function_exists('enqueue_frontend_dist')) {
-    function enqueue_frontend_dist()
-    {
+function enqueue_frontend_dist()
+{
+    wp_enqueue_style(
+        'frontend',
+        get_template_directory_uri() . '/dist/css/frontend.css',
+        array(),
+        _VER,
+        'all'
+    );
 
-        wp_enqueue_style(
-            'frontend',
-            get_template_directory_uri() . '/dist/css/frontend.css',
-            array(),
-            _VER,
-            'all'
-        );
-
-        wp_enqueue_script(
-            'frontend',
-            get_template_directory_uri() . '/dist/js/frontend.js',
-            array(),
-            _VER,
-            true
-        );
-    }
+    wp_enqueue_script(
+        'frontend',
+        get_template_directory_uri() . '/dist/js/frontend.js',
+        array(),
+        _VER,
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'enqueue_frontend_dist');
 
 // Enqueue backend assets.
-if (!function_exists('enqueue_backend_dist')) {
-    function enqueue_backend_dist()
-    {
+function enqueue_backend_dist()
+{
+    add_editor_style('dist/css/backend.css');
 
-        add_editor_style('dist/css/backend.css');
-
-        // wp_enqueue_script(
-        //     'backend',
-        //     get_template_directory_uri() . '/dist/js/backend.js',
-        //     array(),
-        //     _VER,
-        //     true
-        // );
-    }
+    // wp_enqueue_script(
+    //     'backend',
+    //     get_template_directory_uri() . '/dist/js/backend.js',
+    //     array(),
+    //     _VER,
+    //     true
+    // );
 }
 add_action('enqueue_block_editor_assets', 'enqueue_backend_dist');
 
