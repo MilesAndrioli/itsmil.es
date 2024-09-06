@@ -1,10 +1,10 @@
 #app-header {
-    background-color: var(--bs-ivory);
+    background-color: var(--ivory);
 
     @media (prefers-reduced-transparency: no-preference) {
-        background-color: rgba(var(--bs-ivory-rgb), 85%);
+        background-color: rgba(var(--ivory-rgb), 85%);
         backdrop-filter: blur(14px) saturate(150%);
     }
 
-    box-shadow: 0 4px 20px rgba(var(--bs-onyx-rgb), 15%);
+    box-shadow: 0 4px 20px rgba(var(--onyx-rgb), 15%);
 }
