@@ -34,5 +34,8 @@ if (!defined('ABSPATH')) {
         <div id="smooth-wrapper">
             <div id="smooth-content">
 
+                <!-- App Noise VFX -->
+                <?php get_template_part('parts/app-noise'); ?>
+
                 <!-- App Main -->
                 <main id="app-main">
