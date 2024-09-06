@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<header id="app-header" class="position-fixed z-1 w-100 py-3">
+<header id="app-header" class="position-fixed z-8 w-100 py-3">
     <div class="container">
         <div class="d-flex align-items-center justify-content-between gap-5">
 
