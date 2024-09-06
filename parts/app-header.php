@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
                 <?php the_custom_logo(); ?>
             <?php else : ?>
                 <a href="<?php echo esc_url(home_url()); ?>">
-                    <span class="h3"><?php bloginfo('name'); ?></span>
+                    <?php bloginfo('name'); ?>
                 </a>
             <?php endif; ?>
 
