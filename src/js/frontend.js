@@ -39,7 +39,6 @@ import exitLoader from "./utilities/exitLoader";
 // DOC Ready
 function documentReady() {
     getDimensions("#app-header", "height");
-    getDimensions("#wpadminbar", "height");
 
     initGsap();
     initGsapTriggers();
