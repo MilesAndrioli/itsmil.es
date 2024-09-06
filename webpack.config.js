@@ -9,12 +9,12 @@ const projectPaths = {
 
 const projectFiles = {
     browserSync: {
-        enable: false,
+        enable: true,
         host: "localhost",
         port: 3000,
 
         mode: "proxy",
-        proxy: "https://mediumvioletred-camel-432906.hostingersite.com",
+        proxy: "http://itsmiles.local/",
 
         // files: "**/*.php",
         // reload: true,
