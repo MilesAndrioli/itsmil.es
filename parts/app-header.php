@@ -21,9 +21,8 @@ if (!defined('ABSPATH')) {
             <?php if (has_custom_logo()) : ?>
                 <?php the_custom_logo(); ?>
             <?php else : ?>
-                <a href="<?php echo esc_url(home_url()); ?>" class="d-grid">
-                    <span class="h4"><?php bloginfo('name'); ?></span>
-                    <small><?php bloginfo('description'); ?></small>
+                <a href="<?php echo esc_url(home_url()); ?>">
+                    <span class="h3"><?php bloginfo('name'); ?></span>
                 </a>
             <?php endif; ?>
 
