@@ -1,0 +1,13 @@
+$max-width: (
+    "max-width": (
+        property: max-width,
+        class: mw,
+        values: (
+            400: 400px,
+            600: 600px,
+            800: 800px,
+        ),
+    ),
+);
+
+$utilities: map-merge($utilities, $max-width);
