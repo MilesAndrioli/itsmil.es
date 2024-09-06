@@ -2,7 +2,7 @@
     background-color: var(--onyx);
 
     @media (prefers-reduced-transparency: no-preference) {
-        background-color: rgba(var(--onyx-rgb), 85%);
+        background-color: rgba(var(--onyx-rgb), 50%);
         backdrop-filter: blur(14px) saturate(150%);
     }
 }
