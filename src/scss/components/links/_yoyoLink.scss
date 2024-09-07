@@ -15,7 +15,7 @@
 
         transform: scaleX(0);
         transform-origin: right;
-        transition: transform var(--quart--regular);
+        transition: transform var(--quart--fast);
     }
 
     &::after {

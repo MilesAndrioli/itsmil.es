@@ -19,10 +19,11 @@ $theme-colors: (
     // Very dark grey, almost black
     "coal": #1e1e1e,
     // Pure black
-    "onyx": #000
+    "onyx": #111
 );
 
-$body-bg: map-get($theme-colors, "coal");
+$body-bg: map-get($theme-colors, "onyx");
+$body-color: map-get($theme-colors, "ivory");
+$link-color: $body-color;
 $border-color: map-get($theme-colors, "charcoal");
-$body-color: map-get($theme-colors, "snow");
-$link-color: map-get($theme-colors, "ivory");
+$hr-color: $border-color;
