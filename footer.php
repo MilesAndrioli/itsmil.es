@@ -6,14 +6,14 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-</main> <!-- #appMain -->
+</main> <!-- #app-main -->
 
 <!-- App Footer -->
 <?php get_template_part('parts/app-footer'); ?>
 
 </div> <!-- #smooth-content -->
 </div> <!-- #smooth-wrapper -->
-</div> <!-- #appWrapper -->
+</div> <!-- #app-wrapper -->
 
 <?php wp_footer(); ?>
 </body>
