@@ -1,0 +1,26 @@
+// .yoyoLink,
+// .swipeLink {
+//     color: #fff;
+//     text-transform: uppercase;
+
+//     &--ontop {
+//         padding: 20px 40px;
+//         border: 1px solid currentColor;
+//         background-color: transparent;
+//     }
+// }
+
+// .unfoldLink {
+//     color: #fff;
+//     text-transform: uppercase;
+
+//     padding: 20px 40px;
+//     border: 1px solid currentColor;
+//     background-color: transparent;
+// }
+
+// *,
+.grid > div,
+.row > div {
+    border: 1px solid var(--border-color);
+}
