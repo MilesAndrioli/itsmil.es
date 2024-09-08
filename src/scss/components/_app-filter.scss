@@ -28,10 +28,10 @@
 
     background-size: 50vw 33.33vh;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
         background-size: 33.33vw 50vh;
     }
     @include media-breakpoint-up(xxxl) {
-        background-size: 20vw 50vh;
+        background-size: 25vw 50vh;
     }
 }
