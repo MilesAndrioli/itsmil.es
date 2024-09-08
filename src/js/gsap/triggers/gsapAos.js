@@ -54,9 +54,9 @@ export default function initGsapAos() {
             stagger: getAttribute(el, "aos-stagger", 0.2),
             once: el.hasAttribute("aos-once"),
             scrub: el.hasAttribute("aos-scrub"),
-            splitType: getAttribute(el, "split-type", "words"),
-            splitStagger: getAttribute(el, "split-stagger", 0.05),
-            splitFrom: getAttribute(el, "split-from"),
+            splitType: getAttribute(el, "aos-split-type", "words"),
+            splitStagger: getAttribute(el, "aos-split-stagger", 0.05),
+            splitFrom: getAttribute(el, "aos-split-from"),
         };
     }
 
