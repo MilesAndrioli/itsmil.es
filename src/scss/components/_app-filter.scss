@@ -11,11 +11,22 @@
     backdrop-filter: saturate(150%);
 }
 
+/*
+ * This CSS rule applies a grid-like background pattern using two linear gradients:
+ * one for horizontal lines and one for vertical lines.
+ * The grid consists of 1px lines with transparent spaces between them.
+ * 
+ * The background-position values are adjusted to align the grid lines precisely:
+ * - The first gradient (horizontal lines) starts at (0px, 0px).
+ * - The second gradient (vertical lines) is slightly shifted horizontally by -0.5px to avoid blurring.
+*/
+
 #app-filter {
     background-image: linear-gradient(#a0a0a0 1px, transparent 1px),
         linear-gradient(90deg, #a0a0a0 1px, transparent 1px);
-    background-size: 50vw 33.33vh;
     background-position: 0px 0px, -0.5px 0px;
+
+    background-size: 50vw 33.33vh;
 
     @include media-breakpoint-up(lg) {
         background-size: 33.33vw 50vh;
