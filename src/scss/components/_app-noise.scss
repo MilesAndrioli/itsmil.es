@@ -1,0 +1,11 @@
+#app-noise {
+    position: fixed;
+    z-index: map-get($zindex-levels, 10);
+    pointer-events: none;
+
+    top: -10rem;
+    left: -10rem;
+    height: calc(100% + 20rem);
+    width: calc(100% + 20rem);
+
+}
