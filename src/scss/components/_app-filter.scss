@@ -7,6 +7,20 @@
 
     background-color: rgba(0, 0, 0, 40%);
     mix-blend-mode: overlay;
-    // mix-blend-mode: soft-light;
-    // backdrop-filter: saturate(150%);
+    mix-blend-mode: soft-light;
+    backdrop-filter: saturate(150%);
+}
+
+#app-filter {
+    background-image: linear-gradient(#a0a0a0 1px, transparent 1px),
+        linear-gradient(90deg, #a0a0a0 1px, transparent 1px);
+    background-size: 50vw 33.33vh;
+    background-position: 0px 0px, -0.5px 0px;
+
+    @include media-breakpoint-up(lg) {
+        background-size: 33.33vw 50vh;
+    }
+    @include media-breakpoint-up(xxxl) {
+        background-size: 20vw 50vh;
+    }
 }
