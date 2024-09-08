@@ -24,6 +24,9 @@ if (!defined('ABSPATH')) {
         <!-- App Loader -->
         <?php get_template_part('parts/app-loader'); ?>
 
+        <!-- App Noise VFX -->
+        <?php get_template_part('parts/app-noise'); ?>
+
         <!-- App Filter VFX -->
         <?php get_template_part('parts/app-filter'); ?>
 
@@ -33,9 +36,6 @@ if (!defined('ABSPATH')) {
         <!-- Scroll Smoother -->
         <div id="smooth-wrapper">
             <div id="smooth-content">
-
-                <!-- App Noise VFX -->
-                <?php get_template_part('parts/app-noise'); ?>
 
                 <!-- App Main -->
                 <main id="app-main">
