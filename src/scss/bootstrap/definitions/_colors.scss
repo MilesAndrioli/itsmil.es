@@ -26,4 +26,4 @@ $body-bg: map-get($theme-colors, "onyx");
 $body-color: map-get($theme-colors, "ivory");
 $link-color: $body-color;
 $border-color: map-get($theme-colors, "charcoal");
-$hr-color: $border-color;
+$hr-color: map-get($theme-colors, "slate");
