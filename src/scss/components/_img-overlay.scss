@@ -1,8 +1,23 @@
 $debug: false;
 
+/*
+ * The background color or gradient of the overlay can be customized
+ * using inline CSS variables. Below are examples of how to adjust the 
+ * overlay color:
+ *
+ * Default usage (15% black overlay):
+ * <div class="img-overlay"></div>
+ *
+ * Custom color overlay (40% black):
+ * <div class="img-overlay" style="--bg-color: rgb(0 0 0 / 40%);"></div>
+ *
+ * Custom gradient overlay (transparent to 50% black):
+ * <div class="img-overlay" style="--bg-color: linear-gradient(transparent 0%, rgb(0 0 0 / 50%) 100%);"></div>
+ */
+
 .img-overlay {
-    --bg-color: rgba(0, 0, 0, 15%);
-    background-color: var(--bg-color);
+    --bg-color: rgb(0 0 0 / 15%);
+    background: var(--bg-color);
 
     position: absolute;
     height: 100%;
