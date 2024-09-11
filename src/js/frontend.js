@@ -24,9 +24,18 @@ window.TOUCH = !!ScrollTrigger.isTouch;
 import "../scss/bootstrap/bootstrap.scss";
 import "../scss/frontend.scss";
 
+// Barba
+import barba from "@barba/core";
+import initBarba from "./barba/initBarba";
+
 // GSAP
 import initGsap from "./gsap/initGsap";
 import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
+
+// GSAP + Barba
+import killGsapTriggers from "./gsap/utilities/killGsapTriggers";
+import initGsapEffects from "./gsap/utilities/initGsapEffects";
+import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
 
 // Utilities
 import getDimensions from "./utilities/getDimensions";
@@ -40,6 +49,7 @@ import exitLoader from "./utilities/exitLoader";
 function documentReady() {
     getDimensions("#app-header", "height");
 
+    initBarba();
     initGsap();
     initGsapTriggers();
 }
@@ -50,3 +60,15 @@ function windowLoad() {
     exitLoader();
 }
 window.addEventListener("load", windowLoad, false);
+
+// BARBA After Leave
+barba.hooks.afterLeave(() => {
+    killGsapTriggers();
+});
+
+// BARBA After
+barba.hooks.after(() => {
+    initGsapTriggers();
+    initGsapEffects();
+    gsapScrollTo(0, false);
+});

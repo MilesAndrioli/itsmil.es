@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 <body <?php echo body_class(); ?>>
 
     <!-- App Wrapper -->
-    <div id="app-wrapper">
+    <div id="app-wrapper" data-barba="wrapper">
 
         <!-- App Loader -->
         <?php get_template_part('parts/app-loader'); ?>
@@ -38,4 +38,4 @@ if (!defined('ABSPATH')) {
             <div id="smooth-content">
 
                 <!-- App Main -->
-                <main id="app-main">
+                <main id="app-main" data-barba="container" data-barba-namespace="<?php echo get_the_title(); ?>">
