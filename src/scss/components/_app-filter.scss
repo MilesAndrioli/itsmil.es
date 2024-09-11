@@ -27,7 +27,7 @@
         linear-gradient(90deg, #a0a0a0 1px, transparent 1px);
     background-position: 0px 0px, -0.5px 0px;
 
-    background-size: 50vw 33.33vh;
+    background-size: 50vw 50vh;
 
     @include media-breakpoint-up(xl) {
         background-size: 33.33vw 50vh;
