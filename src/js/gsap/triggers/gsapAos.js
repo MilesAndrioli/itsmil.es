@@ -44,7 +44,7 @@ export default function initGsapAos() {
             end = `bottom top+=${APP_HEADER_HEIGHT}`;
         } else {
             start = "top bottom";
-            end = "top 25%";
+            end = "top center";
         }
 
         return {
