@@ -36,18 +36,20 @@ export default function initGsapAos() {
      * @returns {Object} A settings object with all necessary animation parameters.
      */
     function setAnimationSettings(el) {
-        const isAfter = el.hasAttribute("aos-after");
+        const when = getAttribute(el, "aos-when", "enters");
+        let start, end;
+
+        if (when === "exits") {
+            start = "bottom 75%";
+            end = `bottom top+=${APP_HEADER_HEIGHT}`;
+        } else {
+            start = "top bottom";
+            end = "top 25%";
+        }
+
         return {
-            start: getAttribute(
-                el,
-                "aos-start",
-                isAfter ? "bottom center" : "top bottom"
-            ),
-            end: getAttribute(
-                el,
-                "aos-end",
-                isAfter ? `bottom top+=${APP_HEADER_HEIGHT}` : "center center"
-            ),
+            start: getAttribute(el, "aos-start", start),
+            end: getAttribute(el, "aos-end", end),
             duration: getAttribute(el, "aos-duration", 1),
             ease: getAttribute(el, "aos-ease"),
             delay: getAttribute(el, "aos-delay", 0.3),
@@ -57,6 +59,8 @@ export default function initGsapAos() {
             splitType: getAttribute(el, "aos-split-type", "words"),
             splitStagger: getAttribute(el, "aos-split-stagger", 0.05),
             splitFrom: getAttribute(el, "aos-split-from"),
+            debug: el.hasAttribute("aos-debug"),
+            debugId: getAttribute(el, "aos-debug"),
         };
     }
 
@@ -71,6 +75,8 @@ export default function initGsapAos() {
      */
     function setAnimation(elements, origin, target, settings, animation) {
         elements.forEach((el, index) => {
+            const ogEl = el;
+
             if (animation.includes("split")) {
                 const split = new SplitText(el, {
                     type: settings.splitType,
@@ -98,8 +104,11 @@ export default function initGsapAos() {
                         : "play none none reverse",
                     scrub: settings.scrub,
                     once: settings.once,
-                    markers: debug,
-                    // id: el.tagName,
+                    markers: settings.debug,
+                    id: settings.debugId,
+
+                    onEnter: () => ogEl.classList.add("aos-active"),
+                    onLeaveBack: () => ogEl.classList.remove("aos-active"),
                 },
             });
         });
