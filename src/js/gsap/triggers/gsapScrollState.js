@@ -9,7 +9,7 @@ export default function initGsapScrollState() {
     // Detect Scroll Milestones
     ScrollTrigger.create({
         trigger: body,
-        start: `${innerHeight / 1.333333333333333} top+=${APP_HEADER_HEIGHT}`,
+        start: `${innerHeight / 1.333333333333333 + APP_HEADER_HEIGHT} top`,
         toggleClass: "HAS-REACHED--STEP-1",
         // markers: true,
     });
