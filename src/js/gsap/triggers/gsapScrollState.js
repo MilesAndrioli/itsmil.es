@@ -26,11 +26,13 @@ export default function initGsapScrollState() {
     ScrollTrigger.create({
         trigger: "#app-main > section:nth-child(1)",
         start: "bottom top",
-        endTrigger: body,
-        toggleClass: {
-            targets: body,
-            className: "HAS-REACHED--STEP-1",
-        },
+        // endTrigger: body,
+        // toggleClass: {
+        //     targets: body,
+        //     className: "HAS-REACHED--STEP-1",
+        // },
+        onEnter: () => body.classList.add("HAS-REACHED--STEP-1"),
+        onLeaveBack: () => body.classList.remove("HAS-REACHED--STEP-1"),
         markers: true,
     });
 
