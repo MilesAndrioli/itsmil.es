@@ -24,9 +24,9 @@ export default function initGsapScrollState() {
     // });
 
     ScrollTrigger.create({
-        trigger: "#app-main > section:first-of-type",
-        endTrigger: body,
+        trigger: "#app-main > section:nth-child(1)",
         start: "bottom top",
+        endTrigger: body,
         toggleClass: {
             targets: body,
             className: "HAS-REACHED--STEP-1",
