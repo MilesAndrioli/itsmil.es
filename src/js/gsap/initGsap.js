@@ -15,8 +15,8 @@ export default function initGsap() {
     });
 
     ScrollSmoother.create({
-        effects: MNK,
-        effectsPadding: 800,
+        effects: true,
+        // effectsPadding: 800,
         smooth: 1.2,
     });
 
