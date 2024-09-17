@@ -51,6 +51,6 @@ export default function initGsapScrollState() {
                 .style.setProperty("--SCROLL_PROGRESS", scrollProgress);
             if (debug) console.log(scrollProgress);
         },
-        markers: true,
+        markers: debug,
     });
 }
