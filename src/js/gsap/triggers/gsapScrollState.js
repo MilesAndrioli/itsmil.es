@@ -9,32 +9,20 @@ export default function initGsapScrollState() {
     const body = document.querySelector("#app-body");
 
     // Detect Scroll Milestones
-    // ScrollTrigger.create({
-    //     trigger: body,
-    //     start: `${innerHeight / 1.333333333333333 + APP_HEADER_HEIGHT} top`,
-    //     toggleClass: "HAS-REACHED--STEP-0",
-    //     markers: debug,
-    // });
-
-    // ScrollTrigger.create({
-    //     trigger: body,
-    //     start: `${innerHeight} top+=${APP_HEADER_HEIGHT}`,
-    //     toggleClass: "HAS-REACHED--STEP-2",
-    //     markers: debug,
-    // });
-
     ScrollTrigger.create({
         trigger: "#app-main > section:nth-child(1)",
         start: "bottom top",
-        // endTrigger: body,
-        // toggleClass: {
-        //     targets: body,
-        //     className: "HAS-REACHED--STEP-1",
-        // },
         onEnter: () => body.classList.add("HAS-REACHED--STEP-1"),
         onLeaveBack: () => body.classList.remove("HAS-REACHED--STEP-1"),
-        markers: true,
+        markers: debug,
     });
+
+    // ScrollTrigger.create({
+    //     trigger: body,
+    //     start: `${innerHeight * 2} top`,
+    //     toggleClass: "HAS-REACHED--STEP-2",
+    //     markers: debug,
+    // });
 
     ScrollTrigger.create({
         trigger: "#app-footer",
@@ -57,12 +45,12 @@ export default function initGsapScrollState() {
     // Detect Scroll Progress
     ScrollTrigger.create({
         onUpdate: (self) => {
-            const scrollProgress = self.progress.toFixed(2);
+            const scrollProgress = Math.round(self.progress * 100);
             document
                 .querySelector("html")
                 .style.setProperty("--SCROLL_PROGRESS", scrollProgress);
             if (debug) console.log(scrollProgress);
         },
-        markers: debug,
+        markers: true,
     });
 }
