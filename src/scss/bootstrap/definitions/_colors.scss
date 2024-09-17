@@ -25,5 +25,5 @@ $theme-colors: (
 $body-bg: map-get($theme-colors, "onyx");
 $body-color: map-get($theme-colors, "ivory");
 $link-color: $body-color;
-$border-color: map-get($theme-colors, "charcoal");
+$border-color: rgba(map-get($theme-colors, "snow"), 10%);
 $hr-color: map-get($theme-colors, "slate");
