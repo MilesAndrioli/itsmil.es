@@ -39,7 +39,7 @@ export default function initGsapAos() {
         const when = getAttribute(el, "aos-when", "enters");
         let start, end;
 
-        if (when === "exits") {
+        if (when === "leaving") {
             start = "bottom 75%";
             end = `bottom top+=${APP_HEADER_HEIGHT}`;
         } else {
@@ -107,8 +107,11 @@ export default function initGsapAos() {
                     markers: settings.debug,
                     id: settings.debugId,
 
-                    onEnter: () => ogEl.classList.add("aos-active"),
-                    onLeaveBack: () => ogEl.classList.remove("aos-active"),
+                    onEnter: () => ogEl.classList.add("aos-engaged"),
+                    onLeave: () => ogEl.classList.add("aos-finished"),
+                    onEnterBack: () => ogEl.classList.remove("aos-finished"),
+                    onLeaveBack: () => ogEl.classList.remove("aos-engaged"),
+                    toggleClass: { targets: ogEl, className: "aos-active" },
                 },
             });
         });
