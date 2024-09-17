@@ -11,14 +11,15 @@ $viewport-height: (
                 60: 60vh,
                 75: 75vh,
                 100: 100vh,
+                "available": calc(100vh - var(--APP_HEADER_HEIGHT)),
             ),
     ),
 );
 
 $utilities: map-merge($utilities, $viewport-height);
 
-$min-height: (
-    "min-height": (
+$min-viewport-height: (
+    "min-viewport-height": (
         property: min-height,
         class: min-vh,
         // responsive: true,
@@ -28,8 +29,28 @@ $min-height: (
                 50: 50vh,
                 75: 75vh,
                 100: 100vh,
+                "available": calc(100vh - var(--APP_HEADER_HEIGHT)),
             ),
     ),
 );
 
-$utilities: map-merge($utilities, $min-height);
+$utilities: map-merge($utilities, $min-viewport-height);
+
+$min-percentage-height: (
+    "min-percentage-height": (
+        property: min-height,
+        class: min-ph,
+        // responsive: true,
+        values:
+            (
+                100: 100%,
+                110: 110%,
+                120: 120%,
+                130: 130%,
+                140: 140%,
+                150: 150%,
+            ),
+    ),
+);
+
+$utilities: map-merge($utilities, $min-percentage-height);
