@@ -1,8 +1,26 @@
 #app-header {
+    --component-transition: var(--circ--slow);
+    --shift-out: translateY(calc(var(--APP_HEADER_HEIGHT) * -1));
+    --shift-in: unset;
+
     background-color: var(--onyx);
 
     @media (prefers-reduced-transparency: no-preference) {
         background-color: rgba(var(--onyx-rgb), 50%);
         backdrop-filter: blur(14px) saturate(150%);
     }
+
+    transition: transform var(--component-transition);
+}
+
+body.HAS-REACHED--STEP-1 #app-header {
+    transform: var(--shift-out);
+}
+
+body.HAS-REACHED--STEP-1.IS-SCROLLING--UP #app-header {
+    transform: var(--shift-in);
+}
+
+body.HAS-REACHED--FOOTER #app-header {
+    transform: var(--shift-in);
 }
