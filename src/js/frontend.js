@@ -39,27 +39,34 @@ import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
 
 // Utilities
 import getDimensions from "./utilities/getDimensions";
-import exitLoader from "./utilities/exitLoader";
 
 /* +-----------------------------------------+
 |           EVENTS AREA             		 |
 +-----------------------------------------+ */
 
 // DOC Ready
-function documentReady() {
-    getDimensions("#app-header", "height");
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+        document.body.classList.add("PAGE-IS--LOADING");
+        getDimensions("#app-header", "height");
 
-    initBarba();
-    initGsap();
-    initGsapTriggers();
-}
-document.addEventListener("DOMContentLoaded", documentReady, false);
+        initBarba();
+        initGsap();
+        initGsapTriggers();
+    },
+    false
+);
 
-// WINDOW Load
-function windowLoad() {
-    exitLoader();
-}
-window.addEventListener("load", windowLoad, false);
+// WINDOW Ready
+window.addEventListener(
+    "load",
+    () => {
+        document.body.classList.remove("PAGE-IS--LOADING");
+        document.body.classList.add("PAGE-IS--LOADED");
+    },
+    false
+);
 
 // BARBA After Leave
 barba.hooks.afterLeave(() => {

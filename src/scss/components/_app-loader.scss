@@ -14,7 +14,7 @@ $loaderStyle: "fill-logo--right"; // simple || fill-logo--up/down/right/left
     transition: opacity var(--quart--slow);
 }
 
-body.page--is-ready #app-loader {
+body.PAGE-IS--LOADED #app-loader {
     opacity: 0;
     pointer-events: none;
 }
