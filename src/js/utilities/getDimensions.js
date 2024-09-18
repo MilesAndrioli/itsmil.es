@@ -1,5 +1,5 @@
 import { createDebugLogger } from "./debugger";
-const debug = true;
+const debug = false;
 const consoleLog = createDebugLogger(debug);
 
 import toUpperSnakeCase from "./toUpperSnakeCase";
