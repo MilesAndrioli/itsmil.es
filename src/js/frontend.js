@@ -32,7 +32,10 @@ import initBarba from "./barba/initBarba";
 import initGsap from "./gsap/initGsap";
 import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
 
-// GSAP + Barba
+// Cuberto Mouse Follower
+import initMouseFollower from "./cuberto/initMouseFollower";
+
+// GSAP x Barba Utilities
 import killGsapTriggers from "./gsap/utilities/killGsapTriggers";
 import initGsapEffects from "./gsap/utilities/initGsapEffects";
 import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
@@ -64,6 +67,8 @@ window.addEventListener(
     () => {
         document.body.classList.remove("PAGE-IS--LOADING");
         document.body.classList.add("PAGE-IS--LOADED");
+
+        if (MNK) initMouseFollower();
     },
     false
 );
