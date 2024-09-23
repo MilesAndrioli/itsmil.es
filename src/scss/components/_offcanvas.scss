@@ -60,6 +60,50 @@
     box-shadow: var(--offcanvas-box-shadow);
 }
 
+// Scroll States
+// .offcanvas.offcanvas-start,
+// .offcanvas.offcanvas-end,
+// .offcanvas.offcanvas-top {
+//     top: var(--APP_HEADER_HEIGHT);
+// }
+
+// body.HAS-REACHED--STEP-1 .offcanvas.offcanvas-start,
+// body.HAS-REACHED--STEP-1 .offcanvas.offcanvas-end,
+// body.HAS-REACHED--STEP-1 .offcanvas.offcanvas-top {
+//     top: 0;
+// }
+
+// body.HAS-REACHED--STEP-1.IS-SCROLLING--UP .offcanvas.offcanvas-start,
+// body.HAS-REACHED--STEP-1.IS-SCROLLING--UP .offcanvas.offcanvas-end,
+// body.HAS-REACHED--STEP-1.IS-SCROLLING--UP .offcanvas.offcanvas-top {
+//     top: var(--APP_HEADER_HEIGHT);
+// }
+
+// body.HAS-REACHED--FOOTER .offcanvas.offcanvas-start,
+// body.HAS-REACHED--FOOTER .offcanvas.offcanvas-end,
+// body.HAS-REACHED--FOOTER .offcanvas.offcanvas-top {
+//     top: var(--APP_HEADER_HEIGHT);
+// }
+
+// Scroll States -- Reduced
+.offcanvas.offcanvas-start,
+.offcanvas.offcanvas-end,
+.offcanvas.offcanvas-top {
+    top: var(--APP_HEADER_HEIGHT);
+
+    body.HAS-REACHED--STEP-1 & {
+        top: 0;
+    }
+
+    body.HAS-REACHED--STEP-1.IS-SCROLLING--UP & {
+        top: var(--APP_HEADER_HEIGHT);
+    }
+
+    body.HAS-REACHED--FOOTER & {
+        top: var(--APP_HEADER_HEIGHT);
+    }
+}
+
 // If Draggable
 .offcanvas-draggable {
     gap: var(--offcanvas-spacing);
