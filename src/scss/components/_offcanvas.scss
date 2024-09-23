@@ -59,3 +59,42 @@
 .offcanvas.show:not(.hiding) {
     box-shadow: var(--offcanvas-box-shadow);
 }
+
+// If Draggable
+.offcanvas-draggable {
+    gap: var(--offcanvas-spacing);
+
+    &::before {
+        --height: 80px;
+        --width: 6px;
+        content: "";
+
+        height: var(--height);
+        width: var(--width);
+        border-radius: 1rem;
+        background-color: var(--offcanvas-border-color);
+
+        align-self: center;
+        flex-shrink: 0;
+    }
+
+    &.offcanvas-start {
+        flex-direction: row-reverse;
+    }
+
+    &.offcanvas-end {
+        flex-direction: row;
+    }
+
+    &.offcanvas-top {
+        flex-direction: column-reverse;
+    }
+
+    &.offcanvas-top,
+    &.offcanvas-bottom {
+        &::before {
+            height: var(--width);
+            width: var(--height);
+        }
+    }
+}
