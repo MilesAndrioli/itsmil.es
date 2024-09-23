@@ -1,0 +1,61 @@
+.offcanvas,
+.offcanvas-backdrop {
+    --component-transition: var(--circ--slow);
+}
+
+.offcanvas {
+    --offset-distance: 40%;
+    --offcanvas-border-radius: 1.25rem;
+    --offcanvas-spacing: 1.5rem;
+
+    z-index: map-get($zindex-levels, 10);
+    padding: var(--offcanvas-spacing);
+    opacity: 0;
+
+    transition: transform var(--component-transition),
+        opacity var(--component-transition),
+        visibility var(--component-transition),
+        box-shadow var(--component-transition), top var(--component-transition);
+
+    &.offcanvas-start {
+        border-top-right-radius: var(--offcanvas-border-radius);
+        border-bottom-right-radius: var(--offcanvas-border-radius);
+        transform: translateX(calc(var(--offset-distance) * -1));
+    }
+
+    &.offcanvas-end {
+        border-top-left-radius: var(--offcanvas-border-radius);
+        border-bottom-left-radius: var(--offcanvas-border-radius);
+        transform: translateX(var(--offset-distance));
+    }
+
+    &.offcanvas-top {
+        border-bottom-left-radius: var(--offcanvas-border-radius);
+        border-bottom-right-radius: var(--offcanvas-border-radius);
+        transform: translateY(calc(var(--offset-distance) * -1));
+    }
+
+    &.offcanvas-bottom {
+        border-top-left-radius: var(--offcanvas-border-radius);
+        border-top-right-radius: var(--offcanvas-border-radius);
+        transform: translateY(var(--offset-distance));
+    }
+}
+
+.offcanvas-backdrop {
+    z-index: map-get($zindex-levels, 9);
+    backdrop-filter: blur(14px) saturate(150%);
+    transition: opacity var(--component-transition);
+}
+
+// Transition: started + finished
+.offcanvas.showing,
+.offcanvas.show:not(.hiding) {
+    transform: unset;
+    opacity: 1;
+}
+
+// Transition: finished
+.offcanvas.show:not(.hiding) {
+    box-shadow: var(--offcanvas-box-shadow);
+}
