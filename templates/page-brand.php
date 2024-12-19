@@ -8,40 +8,8 @@ if (!defined('ABSPATH')) {
 
 get_header(); ?>
 
-<section class="mt-50">
+<section>
     <div class="container">
-
-        <div class="grid text-center" style="--columns: 3;">
-            <div>
-                First auto-column
-                <div class="grid">
-                <div>Auto-column</div>
-                <div>Auto-column</div>
-                </div>
-            </div>
-            <div>
-                Second auto-column
-                <div class="grid" style="--columns: 12;">
-                <div class="g-col-6">6 of 12</div>
-                <div class="g-col-4">4 of 12</div>
-                <div class="g-col-2">2 of 12</div>
-                </div>
-            </div>
-            <div>Third auto-column</div>
-        </div>
-
-        <div class="row row-cols-2">
-            <div>col</div>
-            <div>col</div>
-            <div>col</div>
-            <div>col</div>
-        </div>
-        <div class="row">
-            <div class="col-8">col-8</div>
-            <div class="col-4">col-4</div>
-        </div>
-
-        <hr class="my-50">
 
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -50,8 +18,6 @@ get_header(); ?>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
 
-        <hr class="my-50">
-
         <p class="fs-1">Paragraph 1</p>
         <p class="fs-2">Paragraph 2</p>
         <p class="fs-3">Paragraph 3</p>
@@ -59,8 +25,6 @@ get_header(); ?>
         <p>Paragraph base</p>
         <p class="fs-5">Paragraph 5</p>
         <p class="fs-6">Paragraph 6</p>
-        
-        <hr class="my-50">
 
         <ul>
             <li>Unordered item</li>
@@ -73,52 +37,100 @@ get_header(); ?>
             <li>Ordered item</li>
         </ol>
 
-        <hr class="my-50">
-
         <a href="/home/#TEST">Hyperlink</a>
+        <a href="/home/#TEST" class="btn btn-link">Buttonlink</a>
+
+    </div>
+</section>
+
+<hr>
+
+<section>
+    <div class="container">
+
+        <div class="grid" style="--columns: 2;">
+            <div>
+                <h2 class="h1" aos="split" aos-split-type="chars" aos-scrub aos-repeat>Title</h2>
+                <p aos="split" aos-scrub>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quas ullam, veritatis quam voluptate voluptatum porro ad aliquid quibusdam itaque necessitatibus! Excepturi voluptatem eos accusamus odit reprehenderit provident ipsum.</p>
+            </div>
+            <div class="order-first">
+                <div class="overflow-hidden" aos="scale-out-fade-in" aos-scrub>
+                    <img
+                        class="img-fluid scale-150"
+                        data-speed="auto"
+                        src="/wp-content/uploads/aranprime-KbytCpI1i5I-unsplash.jpg"
+                        alt="Test Image" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<hr>
+
+<section>
+    <div class="container">
+
+        <div class="grid" style="--columns: 2;">
+            <div>
+                <h2 class="h1" aos="split" aos-split-type="chars" aos-scrub>Title</h2>
+                <p aos="split" aos-scrub>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quas ullam, veritatis quam voluptate voluptatum porro ad aliquid quibusdam itaque necessitatibus! Excepturi voluptatem eos accusamus odit reprehenderit provident ipsum.</p>
+            </div>
+            <div>
+                <div class="vh-60 overflow-hidden debug" aos="fade" aos-scrub>
+                    <img
+                        class="img-fluid w-100 min-ph-150 object-fit-cover"
+                        data-speed="auto"
+                        src="/wp-content/uploads/zhao-yangyang-WpQIcQrZ5TI-unsplash.jpg"
+                        alt="Test Image" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<hr>
+
+<section>
+    <div class="container mw-800">
+
+        <div class="grid gap-3" style="--columns: 2;" aos="fade" aos-parent aos-once>
+            <button aos-child class="btn btn-snow swipeLink swipeLink--ontop">Snow</button>
+            <button aos-child class="btn btn-outline-snow swipeLink swipeLink--ontop">Outline Snow</button>
+            <button aos-child class="btn btn-ivory yoyoLink yoyoLink--ontop">Ivory</button>
+            <button aos-child class="btn btn-outline-ivory yoyoLink yoyoLink--ontop">Outline Ivory</button>
+            <button aos-child class="btn btn-pearl">Pearl</button>
+            <button aos-child class="btn btn-outline-pearl">Outline Pearl</button>
+            <button aos-child class="btn btn-ash">Ash</button>
+            <button aos-child class="btn btn-outline-ash">Outline Ash</button>
+            <button aos-child class="btn btn-slate">Slate</button>
+            <button aos-child class="btn btn-outline-slate">Outline Slate</button>
+            <button aos-child class="btn btn-granite">Granite</button>
+            <button aos-child class="btn btn-outline-granite">Outline Granite</button>
+            <button aos-child class="btn btn-coal">Coal</button>
+            <button aos-child class="btn btn-outline-coal">Outline Coal</button>
+            <button aos-child class="btn btn-onyx">Onyx</button>
+            <button aos-child class="btn btn-outline-onyx">Outline Onyx</button>
+        </div>
 
     </div>
 </section>
 
 <section class="overflow-hidden">
     <img
-        class="img-fluid w-100 scale-140 ratio-32x9 object-fit-cover" 
+        class="img-fluid w-100 scale-140  object-fit-cover"
         data-speed="auto"
-        src="/wp-content/uploads/2024/09/daniel-chen-SoNaNOFT974-unsplash.jpg"
-        alt="Test Image"
-    />
+        src="/wp-content/uploads/daniel-chen-SoNaNOFT974-unsplash.jpg"
+        alt="Test Image" />
 </section>
-
-<section class="mb-50">
-    <div class="container">
-
-        <div class="grid gap-3" style="--columns: 2">
-            <button class="btn btn-snow">Snow</button>
-            <button class="btn btn-outline-snow">Outline Snow</button>
-
-            <button class="btn btn-ivory">Ivory</button>
-            <button class="btn btn-outline-ivory">Outline Ivory</button>
-
-            <button class="btn btn-pearl">Pearl</button>
-            <button class="btn btn-outline-pearl">Outline Pearl</button>
-
-            <button class="btn btn-ash">Ash</button>
-            <button class="btn btn-outline-ash">Outline Ash</button>
-
-            <button class="btn btn-slate">Slate</button>
-            <button class="btn btn-outline-slate">Outline Slate</button>
-
-            <button class="btn btn-granite">Granite</button>
-            <button class="btn btn-outline-granite">Outline Granite</button>
-
-            <button class="btn btn-coal">Coal</button>
-            <button class="btn btn-outline-coal">Outline Coal</button>
-
-            <button class="btn btn-onyx">Onyx</button>
-            <button class="btn btn-outline-onyx">Outline Onyx</button>
-        </div>
-
-    </div>
+<section class="overflow-hidden">
+    <img
+        class="img-fluid w-100 scale-140  object-fit-cover"
+        data-speed="auto"
+        src="/wp-content/uploads/daniel-chen-SoNaNOFT974-unsplash.jpg"
+        alt="Test Image" />
 </section>
 
 <?php get_footer();

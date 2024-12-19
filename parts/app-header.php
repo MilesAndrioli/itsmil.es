@@ -6,12 +6,12 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<header id="app-header" class="position-fixed z-8 w-100 border-bottom py-3">
+<header id="app-header" class="position-fixed z-10 w-100 border-bottom py-3">
     <div class="container">
         <div class="row row-cols-3 align-items-center">
 
             <!-- Menu -->
-            <div>
+            <div class="d-flex justify-content-start">
                 <?php wp_nav_menu([
                     'theme_location'    => 'left-header-navigation',
                     'container'         => 'nav',

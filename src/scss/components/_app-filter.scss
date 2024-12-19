@@ -1,6 +1,6 @@
 #app-filter {
     position: fixed;
-    z-index: map-get($zindex-levels, 10);
+    z-index: map-get($zindex-levels, 8);
     pointer-events: none;
 
     height: 100%;
