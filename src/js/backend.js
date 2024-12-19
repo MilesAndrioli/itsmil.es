@@ -1,4 +1,4 @@
-import "../scss/backend.scss";
+import "../css/backend.css";
 
 console.log(`
     _   _      _ _         _____ _

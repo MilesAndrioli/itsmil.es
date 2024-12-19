@@ -12,11 +12,10 @@ module.exports = (projectOptions) => {
         plugins.push(require("autoprefixer"));
     } else {
         plugins.push(
+            require("postcss-import"),
+            require("tailwindcss/nesting"),
+            require("tailwindcss")(require("./tailwind.config.js")),
             require("autoprefixer")
-            // require("postcss-import-ext-glob"),
-            // require("postcss-import"),
-            // require("postcss-nested-ancestors"),
-            // require("postcss-nested"),
             // require("postcss-advanced-variables")
         );
     }

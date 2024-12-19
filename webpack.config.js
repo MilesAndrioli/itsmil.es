@@ -41,7 +41,7 @@ const projectFiles = {
 
     projectCss: {
         filename: "css/[name].css",
-        use: "sass", // sass || postcss
+        use: "postcss", // sass || postcss
         rules: {
             sass: {
                 test: /\.(scss|css)$/,

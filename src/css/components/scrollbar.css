@@ -1,0 +1,27 @@
+* {
+    /* &::-webkit-scrollbar {
+        width: 2px;
+        border-radius: 1rem;
+        background-color: #222;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background-color: #555;
+    } */
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+        background-color: blue;
+        border-radius: 16px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: red;
+        border-radius: 1rem;
+        background-clip: content-box;
+        border: 2px solid transparent;
+    }
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}

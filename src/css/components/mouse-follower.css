@@ -1,0 +1,39 @@
+@import "mouse-follower/dist/mouse-follower.min.css";
+
+/* Global Styling */
+.mf-cursor {
+    z-index: map-get($zindex-levels, 11);
+    mix-blend-mode: exclusion;
+}
+
+/* Pointer Styling */
+.mf-cursor.-pointer::before {
+    transform: scale(120%);
+}
+
+/* Active Styling */
+.mf-cursor.-active::before {
+    transform: scale(120%);
+    content: "🤡";
+}
+
+/* Media Styling */
+.mf-cursor.-media::before {
+    transform: scale(0%);
+}
+
+/* Media Size */
+.mf-cursor-media {
+    --height: 1000px;
+    --width: 500px;
+
+    height: var(--height);
+    width: var(--width);
+    margin: calc(-1 * var(--height) / 2) 0 0 calc(-1 * var(--width) / 2);
+}
+
+/* Media Border Radius */
+.mf-cursor-media-box,
+.mf-cursor-media img {
+    border-radius: 1.25rem;
+}
