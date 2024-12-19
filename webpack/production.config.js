@@ -1,3 +1,5 @@
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 module.exports = (projectOptions) => {
     process.env.NODE_ENV = "production";
 
@@ -20,7 +22,7 @@ module.exports = (projectOptions) => {
     const optimizationRules = {
         ...Base.optimizationRules,
         ...{
-            // add production Optimization rules
+            minimizer: [new CssMinimizerPlugin()],
         },
     };
 
