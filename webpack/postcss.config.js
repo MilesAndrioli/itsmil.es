@@ -20,6 +20,10 @@ module.exports = (projectOptions) => {
         );
     }
 
+    if (process.env.NODE_ENV === "production") {
+        plugins.push(require("cssnano"));
+    }
+
     return {
         plugins: plugins,
     };
