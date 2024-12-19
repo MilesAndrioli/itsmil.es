@@ -42,13 +42,13 @@ function enqueue_backend_dist()
 {
     add_editor_style('dist/css/backend.css');
 
-    // wp_enqueue_script(
-    //     'backend',
-    //     get_template_directory_uri() . '/dist/js/backend.js',
-    //     array(),
-    //     _VER,
-    //     true
-    // );
+    wp_enqueue_script(
+        'backend',
+        get_template_directory_uri() . '/dist/js/backend.js',
+        array(),
+        _VER,
+        true
+    );
 }
 add_action('enqueue_block_editor_assets', 'enqueue_backend_dist');
 
