@@ -4,5 +4,5 @@
 @import "tailwindcss/utilities";
 
 /* Custom Components */
-@import "components/scrollbar";
+@import "components/scrollbars";
 @import "components/mouse-follower";
