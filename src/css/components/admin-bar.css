@@ -1,0 +1,19 @@
+#wpadminbar {
+    opacity: 0;
+    transform: translateY(calc(var(--wp-admin--admin-bar--height) * -1));
+    transition: var(--out--regular, 300ms ease-out);
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: calc(var(--wp-admin--admin-bar--height) / 2);
+        width: 100%;
+    }
+
+    &:hover {
+        opacity: 1;
+        transform: unset;
+    }
+}

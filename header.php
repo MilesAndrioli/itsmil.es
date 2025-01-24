@@ -16,22 +16,22 @@ if (!defined('ABSPATH')) {
     <?php wp_head(); ?>
 </head>
 
-<body id="app-body" <?php echo body_class(); ?>>
+<body id="app-body">
 
     <!-- App Wrapper -->
     <div id="app-wrapper" data-barba="wrapper">
 
         <!-- App Loader -->
-        <?php get_template_part('parts/app-loader'); ?>
+        <?php get_template_part('parts/part_app-loader'); ?>
 
         <!-- App Noise VFX -->
-        <?php get_template_part('parts/app-noise'); ?>
+        <?php get_template_part('parts/part_app-noise'); ?>
 
         <!-- App Filter VFX -->
-        <?php get_template_part('parts/app-filter'); ?>
+        <?php get_template_part('parts/part_app-filter'); ?>
 
         <!-- App Header -->
-        <?php get_template_part('parts/app-header'); ?>
+        <?php get_template_part('parts/part_app-header'); ?>
 
         <!-- Scroll Smoother -->
         <div id="smooth-wrapper">

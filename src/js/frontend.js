@@ -23,28 +23,28 @@ window.TOUCH = !!ScrollTrigger.isTouch;
 // CSS
 import "../css/frontend.css";
 
-// GSAP
-import initGsap from "./gsap/initGsap";
-import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
-// import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
-
 // Utilities
 import getDimensions from "./utilities/getDimensions";
 import initMouseFollower from "./utilities/initMouseFollower";
 
+// GSAP
+import initGsap from "./gsap/initGsap";
+import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
+import initGsapLenis from "./gsap/utilities/initGsapLenis";
+import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
+
 /* +-----------------------------------------+
-    |           EVENTS AREA             		 |
-    +-----------------------------------------+ */
+|           EVENTS AREA             		 |
++-----------------------------------------+ */
 
 // DOC Ready
 document.addEventListener(
     "DOMContentLoaded",
     () => {
         document.body.classList.add("PAGE-IS--LOADING");
-        getDimensions("#app-header", "height");
 
-        initGsap();
-        initGsapTriggers();
+        getDimensions("#app-header", "height");
+        initGsapLenis();
     },
     false
 );
@@ -56,7 +56,14 @@ window.addEventListener(
         document.body.classList.remove("PAGE-IS--LOADING");
         document.body.classList.add("PAGE-IS--LOADED");
 
+        initGsap();
+        initGsapTriggers();
+
         if (MNK) initMouseFollower();
+
+        // Scroll to anchor if there is one
+        // const hash = window.location.hash;
+        // if (hash) gsapScrollTo(hash);
     },
     false
 );

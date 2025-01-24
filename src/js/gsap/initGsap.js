@@ -1,13 +1,12 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { CustomEase } from "gsap/CustomEase";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, CustomEase);
+gsap.registerPlugin(ScrollSmoother, CustomEase);
 
 export default function initGsap() {
     gsap.defaults({
-        ease: CustomEase.create("cubic", "M0,0 C0.8,0.2, 0.2,0.8, 1,1"),
+        ease: CustomEase.create("cubic", "M0,0 C0.77,0, 0.18,1, 1,1"),
     });
 
     gsap.config({
@@ -16,13 +15,7 @@ export default function initGsap() {
 
     ScrollSmoother.create({
         effects: true,
-        // effectsPadding: 1000,
-        smooth: 1.2,
+        effectsPadding: 1000,
+        smooth: 0,
     });
-
-    if (MNK) {
-        ScrollTrigger.normalizeScroll({
-            allowNestedScroll: true,
-        });
-    }
 }
