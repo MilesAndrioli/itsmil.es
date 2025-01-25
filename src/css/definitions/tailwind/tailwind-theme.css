@@ -1,3 +1,29 @@
 @theme {
-    /* --spacing: 1.5rem; */
+    /* Disable or override any default variable */
+    /* --font-*: initial; */
+    --color-*: initial;
+    /* --spacing-*: initial; */
+    /* --breakpoint-*: initial; */
+    /* --container-*: initial; */
+    /* --text-*: initial; */
+    /* --font-weight-*: initial; */
+    /* --tracking-*: initial; */
+    /* --leading-*: initial; */
+    /* --radius-*: initial; */
+    /* --shadow-*: initial; */
+    /* --inset-shadow-*: initial; */
+    /* --drop-shadow-*: initial; */
+    /* --ease-*: initial; */
+    /* --animate-*: initial; */
+    /* --blur-*: initial; */
+    /* --perspective-*: initial; */
+    /* --aspect-*: initial; */
+    /* --default-*: initial; */
+
+    /* Build your own theme */
+    --color-charcoal: #222222;
+    --color-alabaster: #f5f5f5;
+    --color-stone: #f7f5f1;
+    --color-nude: #fff9f5;
+    --color-sand: #ddcab0;
 }

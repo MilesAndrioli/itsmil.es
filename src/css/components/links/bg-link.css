@@ -1,11 +1,13 @@
-.bg-link {
-    background: linear-gradient(currentColor 0 0) no-repeat;
-    background-position: 0% 100%;
-    background-size: 100% 0.1em;
+@layer components {
+    .bg-link {
+        background: linear-gradient(currentColor 0 0) no-repeat;
+        background-position: 0% 100%;
+        background-size: 100% 0.1em;
 
-    transition: var(--out--fast);
+        transition: var(--out--fast);
 
-    &:hover {
-        background-size: 0% 0.1em;
+        &:hover {
+            background-size: 0% 0.1em;
+        }
     }
 }
