@@ -31,7 +31,7 @@ import initMouseFollower from "./utilities/initMouseFollower";
 import initGsap from "./gsap/initGsap";
 import initGsapTriggers from "./gsap/utilities/initGsapTriggers";
 import initGsapLenis from "./gsap/utilities/initGsapLenis";
-import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
+// import gsapScrollTo from "./gsap/utilities/gsapScrollTo";
 
 /* +-----------------------------------------+
 |           EVENTS AREA             		 |
