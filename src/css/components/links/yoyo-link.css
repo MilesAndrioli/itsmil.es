@@ -1,0 +1,48 @@
+.yoyo-link {
+    --animation-delay: 200ms;
+    position: relative;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+
+        background-color: currentColor;
+
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform var(--out--fast);
+    }
+
+    &::after {
+        transform: scaleX(1);
+        transform-origin: left;
+        transition-delay: var(--animation-delay);
+    }
+
+    &:hover {
+        &::before {
+            transform: scaleX(1);
+            transform-origin: left;
+            transition-delay: var(--animation-delay);
+        }
+
+        &::after {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition-delay: 0ms;
+        }
+    }
+}
+
+.yoyo-link--bg {
+    &::before,
+    &::after {
+        height: 100%;
+        mix-blend-mode: difference;
+    }
+}

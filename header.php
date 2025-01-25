@@ -30,12 +30,12 @@ if (!defined('ABSPATH')) {
         <!-- App Filter VFX -->
         <?php get_template_part('parts/part_app-filter'); ?>
 
-        <!-- App Header -->
-        <?php get_template_part('parts/part_app-header'); ?>
-
         <!-- Scroll Smoother -->
         <div id="smooth-wrapper">
             <div id="smooth-content">
+
+                <!-- App Header -->
+                <?php get_template_part('parts/part_app-header'); ?>
 
                 <!-- App Main -->
                 <main id="app-main" data-barba="container" data-barba-namespace="<?php echo get_the_title(); ?>">

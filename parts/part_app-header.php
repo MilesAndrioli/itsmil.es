@@ -6,39 +6,33 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<header id="app-header" class="position-fixed z-10 w-100 border-bottom py-3">
-    <div class="container">
-        <div class="row row-cols-3 align-items-center">
+<header id="app-header">
+    <div class="container flex gap-10 items-center justify-between">
 
-            <!-- Menu -->
-            <div class="d-flex justify-content-start">
-                <?php wp_nav_menu([
-                    'theme_location'    => 'left-header-navigation',
-                    'container'         => 'nav',
-                    'menu_class'        => 'list-unstyled d-flex gap-3',
-                ]); ?>
+        <!-- Menu -->
+        <?php wp_nav_menu([
+            'theme_location'    => 'left-header-navigation',
+            'container'         => 'nav',
+            'menu_class'        => 'flex gap-3',
+        ]); ?>
+
+        <!-- Logo -->
+        <?php if (has_custom_logo()) : ?>
+            <div class="max-w-46">
+                <?php the_custom_logo(); ?>
             </div>
+        <?php else : ?>
+            <a href="<?= esc_url(home_url()); ?>">
+                <?php bloginfo('name'); ?>
+            </a>
+        <?php endif; ?>
 
-            <!-- Logo -->
-            <div class="d-flex justify-content-center">
-                <?php if (has_custom_logo()) : ?>
-                    <?php the_custom_logo(); ?>
-                <?php else : ?>
-                    <a href="<?php echo esc_url(home_url()); ?>">
-                        <?php bloginfo('name'); ?>
-                    </a>
-                <?php endif; ?>
-            </div>
+        <!-- Menu -->
+        <?php wp_nav_menu([
+            'theme_location'    => 'right-header-navigation',
+            'container'         => 'nav',
+            'menu_class'        => 'flex gap-3',
+        ]); ?>
 
-            <!-- Menu -->
-            <div class="d-flex justify-content-end">
-                <?php wp_nav_menu([
-                    'theme_location'    => 'right-header-navigation',
-                    'container'         => 'nav',
-                    'menu_class'        => 'list-unstyled d-flex gap-3',
-                ]); ?>
-            </div>
-
-        </div>
     </div>
 </header>

@@ -2,12 +2,6 @@
     "name": "itsmiles",
     "version": "1.0.0",
     "private": true,
-    "browserslist": [
-        "> 1%",
-        "last 2 versions",
-        "not dead",
-        "not op_mini all"
-    ],
     "scripts": {
         "dev": "webpack --env NODE_ENV=development",
         "dev:watch": "webpack --env NODE_ENV=development --watch",
@@ -17,24 +11,21 @@
     "devDependencies": {
         "@barba/core": "^2.10.3",
         "@barba/prefetch": "^2.2.0",
-        "autoprefixer": "^10.4.20",
         "browser-sync": "^2.29.3",
         "browser-sync-webpack-plugin": "^2.3.0",
         "clean-webpack-plugin": "^4.0.0",
         "css-loader": "^7.1.2",
-        "css-minimizer-webpack-plugin": "^7.0.0",
         "mini-css-extract-plugin": "^2.7.6",
-        "postcss": "^8.4.49",
-        "postcss-import": "^16.1.0",
-        "postcss-loader": "^7.3.3",
-        "tailwindcss": "^3.4.17",
+        "postcss-loader": "^8.1.1",
         "webpack": "^5.89.0",
         "webpack-cli": "^5.1.4",
         "webpackbar": "^5.0.2"
     },
     "dependencies": {
+        "@tailwindcss/postcss": "^4.0.0",
         "gsap": "npm:@gsap/shockingly@^3.12.1",
         "lenis": "^1.1.20",
-        "mouse-follower": "^1.1.2"
+        "mouse-follower": "^1.1.2",
+        "tailwindcss": "^4.0.0"
     }
 }

@@ -13,14 +13,14 @@ if (!defined('ABSPATH')) {
         $logo_url = wp_get_attachment_image_src($logo_id, 'full')[0];
         ?>
         <img
-            class="custom-logo app-loader__image-bg"
-            width="250"
-            src="<?php echo esc_url($logo_url); ?>"
+            class="app-loader__image-bg"
+            width="200"
+            src="<?= esc_url($logo_url); ?>"
             alt="<?php bloginfo('name'); ?>" />
         <img
-            class="custom-logo app-loader__image-filler"
-            width="250"
-            src="<?php echo esc_url($logo_url); ?>"
+            class="app-loader__image-filler"
+            width="200"
+            src="<?= esc_url($logo_url); ?>"
             alt="<?php bloginfo('name'); ?>" />
     <?php else : ?>
         <?php bloginfo('name'); ?>

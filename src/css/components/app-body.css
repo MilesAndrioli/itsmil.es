@@ -1,0 +1,4 @@
+#app-body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}

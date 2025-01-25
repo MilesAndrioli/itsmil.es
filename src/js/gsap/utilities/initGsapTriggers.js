@@ -5,5 +5,6 @@ import initGsapUnveil from "../triggers/gsapUnveil";
 export default function initGsapTriggers() {
     initGsapScrollState();
     initGsapAos();
-    initGsapUnveil();
+
+    if (MNK) initGsapUnveil();
 }
