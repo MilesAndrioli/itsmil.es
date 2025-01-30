@@ -45,14 +45,16 @@ export default function initGsapAos() {
             toggleActions: settings.once
                 ? "play none none none"
                 : "play none none reverse",
-            scrub: settings.scrub,
             once: settings.once,
+            scrub: settings.scrub,
             markers: settings.debug,
+            id: settings.debugId,
+
+            toggleClass: { targets: trigger, className: "aos-active" },
             onEnter: () => trigger.classList.add("aos-engaged"),
             onLeave: () => trigger.classList.add("aos-finished"),
             onEnterBack: () => trigger.classList.remove("aos-finished"),
             onLeaveBack: () => trigger.classList.remove("aos-engaged"),
-            toggleClass: { targets: trigger, className: "aos-active" },
         };
     }
 
@@ -74,35 +76,36 @@ export default function initGsapAos() {
 
         if (animation.includes("split")) {
             gsap.set(el, { willChange: "transform" });
-            const split = new SplitText(elements, { type: settings.splitType });
-            const splitText = split[settings.splitType];
-            gsap.set(splitText, origin);
 
-            gsap.to(splitText, {
+            const split = new SplitText(elements, { type: settings.splitType });
+            const textElements = split[settings.splitType];
+
+            gsap.set(textElements, origin);
+            gsap.to(textElements, {
                 ...destination,
                 duration: settings.duration,
-                ease: settings.ease,
                 delay: settings.delay,
+                ease: settings.ease,
                 stagger: {
                     from: settings.staggerFrom,
                     each: msToSec(settings.staggerGap || 20),
                     // amount: msToSec(settings.staggerDuration || 1000),
-                    ease: settings.staggerEase,
+                    // ease: settings.staggerEase,
                 },
-                scrollTrigger: createTrigger(splitText, el, settings),
+                scrollTrigger: createTrigger(textElements, el, settings),
             });
         } else {
             gsap.set(elements, origin);
             gsap.to(elements, {
                 ...destination,
                 duration: settings.duration,
-                ease: settings.ease,
                 delay: settings.delay,
+                ease: settings.ease,
                 stagger: {
                     from: settings.staggerFrom,
                     each: msToSec(settings.staggerGap || 200),
                     // amount: msToSec(settings.staggerDuration || 1000),
-                    ease: settings.staggerEase,
+                    // ease: settings.staggerEase,
                 },
                 scrollTrigger: createTrigger(elements, el, settings),
             });
