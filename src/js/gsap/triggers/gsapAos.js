@@ -1,11 +1,10 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { CustomEase } from "gsap/CustomEase";
 
 import gsapAnimations from "../animations/animationsIndex";
 
-gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 export default function initGsapAos() {
     const msToSec = (ms) => parseFloat(ms) / 1000;
@@ -26,9 +25,10 @@ export default function initGsapAos() {
             debugId: el.dataset.aosDebug,
 
             staggerFrom: el.dataset.aosStaggerFrom,
-            staggerGap: el.dataset.aosStaggerGap,
-            // staggerDuration: el.dataset.aosStaggerDuration,
-            // staggerEase: CustomEase.create("cubic", "M0,0 C0.77,0, 0.18,1, 1,1"),
+            staggerGap: msToSec(
+                el.dataset.aosStaggerGap ||
+                    (el.dataset.aos?.includes("split") ? 20 : 200)
+            ),
 
             splitType:
                 TOUCH && el.dataset.aosSplit === "chars"
@@ -88,9 +88,7 @@ export default function initGsapAos() {
                 ease: settings.ease,
                 stagger: {
                     from: settings.staggerFrom,
-                    each: msToSec(settings.staggerGap || 20),
-                    // amount: msToSec(settings.staggerDuration || 1000),
-                    // ease: settings.staggerEase,
+                    each: settings.staggerGap,
                 },
                 scrollTrigger: createTrigger(textElements, el, settings),
             });
@@ -103,13 +101,30 @@ export default function initGsapAos() {
                 ease: settings.ease,
                 stagger: {
                     from: settings.staggerFrom,
-                    each: msToSec(settings.staggerGap || 200),
-                    // amount: msToSec(settings.staggerDuration || 1000),
-                    // ease: settings.staggerEase,
+                    each: settings.staggerGap,
                 },
                 scrollTrigger: createTrigger(elements, el, settings),
             });
         }
+
+        // const finalElements = animation.includes("split")
+        //     ? new SplitText(elements, { type: settings.splitType })[
+        //           settings.splitType
+        //       ]
+        //     : elements;
+
+        // gsap.set(finalElements, origin);
+        // gsap.to(finalElements, {
+        //     ...destination,
+        //     duration: settings.duration,
+        //     delay: settings.delay,
+        //     ease: settings.ease,
+        //     stagger: {
+        //         from: settings.staggerFrom,
+        //         each: settings.staggerGap,
+        //     },
+        //     scrollTrigger: createTrigger(finalElements, el, settings),
+        // });
     }
 
     document.querySelectorAll("[data-aos]").forEach(animate);
