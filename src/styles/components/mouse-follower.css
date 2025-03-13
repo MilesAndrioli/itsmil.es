@@ -7,5 +7,5 @@
 
 /* Pointer Styling */
 .mf-cursor.-pointer::before {
-    transform: scale(120%);
+    transform: scale(150%) !important;
 }
