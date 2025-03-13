@@ -10,16 +10,35 @@
     import Lenis from "lenis";
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    const lenis = new Lenis();
+    document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+            const lenis = new Lenis();
 
-    lenis.on("scroll", ScrollTrigger.update);
+            lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
 
-    gsap.ticker.lagSmoothing(0);
+            gsap.ticker.lagSmoothing(0);
+        },
+        false
+    );
+
+    window.addEventListener(
+        "load",
+        () => {
+            ScrollSmoother.create({
+                smooth: 0,
+                effects: true,
+                effectsPadding: 0,
+            });
+        },
+        false
+    );
 </script>
