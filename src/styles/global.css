@@ -1,1 +1,4 @@
 @import "tailwindcss";
+
+@import "./definitions/layers.css";
+@import "./components/mouse-follower.css";

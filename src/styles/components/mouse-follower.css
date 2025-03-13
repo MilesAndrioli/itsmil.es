@@ -1,0 +1,13 @@
+@import "mouse-follower/dist/mouse-follower.min.css";
+
+/* Global Styling */
+.mf-cursor {
+    z-index: var(--mouse-layer);
+    mix-blend-mode: exclusion;
+    color: #fff;
+}
+
+/* Pointer Styling */
+.mf-cursor.-pointer::before {
+    transform: scale(120%);
+}

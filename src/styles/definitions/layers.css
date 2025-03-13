@@ -1,0 +1,5 @@
+:root {
+    --loader-layer: 1000000;
+    --mouse-layer: 999999;
+    --header-layer: 1000;
+}
