@@ -1,11 +1,21 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Skeleton from "../layouts/Skeleton.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<Skeleton
+    title="Home"
+    description="This will be the Home page description."
+>
+    <section class="container mx-auto p-8 bg-gray-800 rounded-lg">
+        <h2>Hello World!</h2>
+    </section>
+    <section class="container mx-auto p-8 bg-gray-800 rounded-lg">
+        <h2>Hello World!</h2>
+    </section>
+    <section class="container mx-auto p-8 bg-gray-800 rounded-lg">
+        <h2>Hello World!</h2>
+    </section>
+    <section class="container mx-auto p-8 bg-gray-800 rounded-lg">
+        <h2>Hello World!</h2>
+    </section>
+</Skeleton>
