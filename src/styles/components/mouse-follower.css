@@ -1,5 +1,3 @@
-@import "mouse-follower/dist/mouse-follower.min.css";
-
 /* Global Styling */
 .mf-cursor {
     z-index: var(--mouse-layer);
