@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 
+import Smoother from "../components/Smoother.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -32,15 +33,13 @@ const { title, description } = Astro.props;
     </head>
     <body class="bg-gray-900 text-gray-100 font-sans antialiased">
         <div id="app-wrapper">
-            <div id="smooth-wrapper">
-                <div id="smooth-content">
-                    <Header />
-                    <main id="app-main">
-                        <slot />
-                    </main>
-                    <Footer />
-                </div>
-            </div>
+            <Smoother>
+                <Header />
+                <main id="app-main">
+                    <slot />
+                </main>
+                <Footer />
+            </Smoother>
         </div>
     </body>
 </html>
