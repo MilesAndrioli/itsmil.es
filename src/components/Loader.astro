@@ -1,0 +1,34 @@
+<div id="app-loader"></div>
+
+<script>
+    document.body.classList.add("PAGE-IS--LOADING");
+
+    window.addEventListener(
+        "load",
+        () => {
+            document.body.classList.remove("PAGE-IS--LOADING");
+            document.body.classList.add("PAGE-HAS--LOADED");
+        },
+        { once: true }
+    );
+</script>
+
+<style>
+    #app-loader {
+        position: fixed;
+        z-index: var(--loader-layer);
+        top: 0;
+        left: 0;
+
+        height: 100%;
+        width: 100%;
+        background-color: blue;
+
+        transition: opacity var(--inOut--super-slow);
+    }
+
+    body.PAGE-HAS--LOADED #app-loader {
+        opacity: 0;
+        pointer-events: none;
+    }
+</style>

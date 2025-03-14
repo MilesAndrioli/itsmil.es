@@ -3,6 +3,7 @@ import "../styles/app.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Loader from "../components/Loader.astro";
 import Smoother from "../components/Smoother.astro";
 
 const { title, description } = Astro.props;
@@ -43,6 +44,7 @@ const { title, description } = Astro.props;
                 </main>
                 <Footer />
             </Smoother>
+            <Loader />
         </div>
     </body>
 </html>

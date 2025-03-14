@@ -33,23 +33,14 @@ import initMouseFollower from "./components/initMouseFollower";
 +-----------------------------------------+ */
 
 // DOC Ready
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
-        document.body.classList.add("PAGE-IS--LOADING");
-    },
-    false
-);
+// document.addEventListener("DOMContentLoaded", () => {}, { once: true });
 
 // WINDOW Ready
 window.addEventListener(
     "load",
     () => {
-        document.body.classList.remove("PAGE-IS--LOADING");
-        document.body.classList.add("PAGE-HAS--LOADED");
-
         initGsapConfig();
         if (MNK) initMouseFollower();
     },
-    false
+    { once: true }
 );
