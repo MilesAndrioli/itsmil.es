@@ -1,19 +1,19 @@
 {
-  "name": "itsmiles",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.14",
-    "astro": "^5.5.2",
-    "gsap": "npm:@gsap/shockingly@^3.12.7",
-    "lenis": "^1.2.3",
-    "mouse-follower": "^1.1.2",
-    "tailwindcss": "^4.0.14"
-  }
+    "name": "itsmiles",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.0.14",
+        "astro": "^5.5.2",
+        "gsap": "npm:@gsap/shockingly@^3.12.7",
+        "lenis": "^1.2.3",
+        "mouse-follower": "^1.1.2",
+        "tailwindcss": "^4.0.14"
+    }
 }

@@ -1,0 +1,28 @@
+:root {
+    /* Easings */
+    /* https://easings.co?demo=0&duration=600&offset=0&curve=0.215,0.61,0.355,1 */
+    --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+    /* https://easings.co?demo=3&duration=600&offset=0&curve=0.77,0,0.175,1 */
+    --ease-inOut: cubic-bezier(0.77, 0, 0.18, 1);
+
+    /* Durations */
+    --fast: 400ms;
+    --regular: 600ms;
+    --slow: 800ms;
+    --super-slow: 1200ms;
+    --giga-slow: 1600ms;
+
+    /* Ease Out */
+    --out--fast: var(--fast) var(--ease-out);
+    --out: var(--regular) var(--ease-out);
+    --out--slow: var(--slow) var(--ease-out);
+    --out--super-slow: var(--super-slow) var(--ease-out);
+    --out--giga-slow: var(--giga-slow) var(--ease-out);
+
+    /* Ease In Out */
+    --inOut--fast: var(--fast) var(--ease-inOut);
+    --inOut: var(--regular) var(--ease-inOut);
+    --inOut--slow: var(--slow) var(--ease-inOut);
+    --inOut--super-slow: var(--super-slow) var(--ease-inOut);
+    --inOut--giga-slow: var(--giga-slow) var(--ease-inOut);
+}

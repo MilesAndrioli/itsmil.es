@@ -1,5 +1,5 @@
 :root {
-    --loader-layer: 1000000;
-    --mouse-layer: 999999;
-    --header-layer: 1000;
+    --loader-layer: 100;
+    --mouse-layer: 99;
+    --header-layer: 10;
 }

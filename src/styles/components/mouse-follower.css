@@ -1,8 +1,7 @@
 /* Global Styling */
 .mf-cursor {
-    z-index: var(--mouse-layer);
+    z-index: var(--mouse-layer) !important;
     mix-blend-mode: exclusion;
-    color: #fff;
 }
 
 /* Pointer Styling */
