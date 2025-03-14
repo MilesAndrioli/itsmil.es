@@ -4,4 +4,5 @@
 @import "./definitions/easings.css";
 @import "./definitions/misc.css";
 
+@import "./components/app-header.css";
 @import "./components/mouse-follower.css";
