@@ -1,4 +1,7 @@
-<div id="app-loader"></div>
+<div id="app-loader">
+    <span class="app-loader__back text-6xl">Loading...</span>
+    <span class="app-loader__front text-6xl">Loading...</span>
+</div>
 
 <script>
     document.body.classList.add("PAGE-IS--LOADING");
@@ -22,7 +25,12 @@
 
         height: 100%;
         width: 100%;
-        background-color: blue;
+        padding: 5rem;
+        background-color: #111;
+
+        display: flex;
+        align-items: end;
+        justify-content: end;
 
         transition: opacity var(--inOut--super-slow);
     }
@@ -30,5 +38,35 @@
     body.PAGE-HAS--LOADED #app-loader {
         opacity: 0;
         pointer-events: none;
+    }
+
+    /* Loader Animation */
+    .app-loader__back,
+    .app-loader__front {
+        --starting-opacity: 10%;
+    }
+
+    .app-loader__back {
+        opacity: var(--starting-opacity);
+        position: absolute;
+    }
+
+    .app-loader__front {
+        animation: clipLeft2Right 1600ms infinite var(--ease-inOut);
+    }
+
+    @keyframes clipLeft2Right {
+        0% {
+            opacity: var(--starting-opacity);
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+        50% {
+            opacity: 100%;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+        100% {
+            opacity: var(--starting-opacity);
+            clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+        }
     }
 </style>
