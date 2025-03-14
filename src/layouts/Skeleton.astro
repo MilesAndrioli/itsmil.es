@@ -31,11 +31,14 @@ const { title, description } = Astro.props;
         />
         <title>{title}</title>
     </head>
-    <body class="bg-gray-900 text-gray-100 font-sans antialiased">
+    <body class="antialiased bg-gray-900 text-gray-100">
         <div id="app-wrapper">
             <Smoother>
                 <Header />
-                <main id="app-main">
+                <main
+                    id="app-main"
+                    class="grid gap-5"
+                >
                     <slot />
                 </main>
                 <Footer />
