@@ -1,0 +1,22 @@
+@theme {
+    /* Cleaning */
+    /* --ease-*: initial; */
+    /* --default-transition-*: initial; */
+    /* --default-font-feature-*: initial; */
+    /* --default-font-variation-*: initial; */
+    /* --default-mono-*: initial; */
+
+    /* Typography */
+    --font-sans: "PP Neue Montreal";
+    --font-serif: "PP Gatwick Glider";
+
+    /* [Using a custom palette](https://tailwindcss.com/docs/colors#using-a-custom-palette) */
+    --color-*: initial;
+    --color-void: #111;
+    --color-charcoal: #222222;
+    --color-alabaster: #f5f5f5;
+    --color-stone: #f7f5f1;
+    --color-nude: #fff9f5;
+    --color-sand: #ddcab0;
+    --color-biohazard: #beff00;
+}

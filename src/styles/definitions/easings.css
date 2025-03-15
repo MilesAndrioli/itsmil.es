@@ -1,5 +1,4 @@
 :root {
-    /* Easings */
     /* https://easings.co?demo=0&duration=600&offset=0&curve=0.215,0.61,0.355,1 */
     --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
     /* https://easings.co?demo=3&duration=600&offset=0&curve=0.77,0,0.175,1 */

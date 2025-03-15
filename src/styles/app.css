@@ -1,8 +1,13 @@
-@import "tailwindcss";
+@import "./tailwind/tailwind.css";
 
-@import "./definitions/layers.css";
-@import "./definitions/easings.css";
-@import "./definitions/misc.css";
+@layer theme {
+    @import "./definitions/fonts.css";
+    @import "./definitions/layers.css";
+    @import "./definitions/easings.css";
+    @import "./definitions/misc.css";
+}
 
-@import "./components/app-header.css";
-@import "./components/mouse-follower.css";
+@layer components {
+    @import "./components/app-header.css";
+    @import "./components/mouse-follower.css";
+}
