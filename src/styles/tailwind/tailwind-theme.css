@@ -10,7 +10,7 @@
     --font-sans: "PP Neue Montreal";
     --font-serif: "PP Gatwick Glider";
 
-    /* [Using a custom palette](https://tailwindcss.com/docs/colors#using-a-custom-palette) */
+    /* [Custom color palette](https://tailwindcss.com/docs/colors#using-a-custom-palette) */
     --color-*: initial;
     --color-void: #111;
     --color-charcoal: #222222;
