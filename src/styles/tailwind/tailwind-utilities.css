@@ -1,3 +1,4 @@
 @utility container {
-    margin-inline: auto;
+    @apply mx-auto;
+    @apply px-5;
 }

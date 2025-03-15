@@ -19,4 +19,6 @@
     --color-nude: #fff9f5;
     --color-sand: #ddcab0;
     --color-biohazard: #beff00;
+
+    --breakpoint-2xl: initial;
 }
