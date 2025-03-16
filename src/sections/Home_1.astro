@@ -1,0 +1,35 @@
+---
+import { Picture } from "astro:assets";
+import Balenciaga from "../assets/images/Balenciaga.png";
+---
+
+<section class="min-h-[50vh] grid place-items-center text-center">
+    <h2
+        class="text-7xl font-serif uppercase font-semibold absolute"
+        data-speed="1.1"
+        data-aos="split-up-chromatic"
+        data-aos-split="chars"
+        data-aos-scrub
+    >
+        Balenciaga<br />Speed 2.0
+    </h2>
+    <Picture
+        src={Balenciaga}
+        alt=""
+        formats={["avif", "webp"]}
+        height={900}
+        data-speed="0.9"
+        pictureAttributes={{
+            class: "absolute",
+        }}
+    />
+    <h2
+        class="text-7xl font-serif uppercase font-semibold text-stroke"
+        data-speed="1.1"
+        data-aos="split-up-chromatic"
+        data-aos-split="chars"
+        data-aos-scrub
+    >
+        Balenciaga<br />Speed 2.0
+    </h2>
+</section>
