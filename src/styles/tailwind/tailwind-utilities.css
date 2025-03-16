@@ -2,3 +2,12 @@
     @apply mx-auto;
     @apply px-5;
 }
+
+@layer utilities {
+    .text-stroke {
+        color: transparent;
+        --stroke-width: 2px;
+        --stroke-color: var(--color-text);
+        -webkit-text-stroke: var(--stroke-width) var(--stroke-color);
+    }
+}
