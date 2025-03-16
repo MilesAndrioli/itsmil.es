@@ -32,13 +32,13 @@ const { title, description } = Astro.props;
         />
         <title>{title}</title>
     </head>
-    <body class="antialiased bg-void text-biohazard">
+    <body class="antialiased bg-body text-text">
         <div id="app-wrapper">
             <Smoother>
                 <Header />
                 <main
                     id="app-main"
-                    class="grid gap-10 py-10"
+                    class="grid gap-50 py-10"
                 >
                     <slot />
                 </main>
