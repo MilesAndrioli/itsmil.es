@@ -1,5 +1,28 @@
+:root {
+    --header-transition: var(--inOut);
+}
+
 #app-header {
     position: sticky;
     z-index: var(--header-layer);
     top: 0;
+}
+
+#app-header {
+    --shift-out: translateY(calc(var(--APP_HEADER_HEIGHT) * -1));
+    --shift-in: unset;
+
+    transition: transform var(--header-transition);
+}
+
+body.HAS-REACHED--STEP-2 #app-header {
+    transform: var(--shift-out);
+}
+
+body.SCROLLING--UP.HAS-REACHED--STEP-2 #app-header {
+    transform: var(--shift-in);
+}
+
+body.HAS-REACHED--FOOTER #app-header {
+    transform: var(--shift-in);
 }

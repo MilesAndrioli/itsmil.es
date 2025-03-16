@@ -2,12 +2,11 @@
 
 @layer theme {
     @import "./definitions/fonts.css";
-    @import "./definitions/layers.css";
-    @import "./definitions/easings.css";
     @import "./definitions/misc.css";
 }
 
 @layer components {
     @import "./components/app-header.css";
     @import "./components/mouse-follower.css";
+    @import "./components/sticky-item.css";
 }
