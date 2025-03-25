@@ -11,6 +11,7 @@
     --font-sans: "PP Neue Montreal";
     --font-serif: "PP Gatwick Glider";
     --font-monument: "PP Monument Extended";
+    --font-death: "Death Mohawk";
     /* #endregion */
 
     /* #region Colors */
@@ -22,14 +23,16 @@
     --color-stone: #f7f5f1;
     --color-nude: #fff9f5;
     --color-sand: #ddcab0;
-    --color-biohazard: #beff00;
+    --color-biohazard: #c9fe6e;
 
     --color-text: var(--color-biohazard);
     --color-body: var(--color-void);
+    --color-border: color-mix(in oklab, var(--color-stone) 10%, transparent);
     /* #endregion */
 
     /* #region Layout */
-    --gappers: calc(var(--spacing) * 10);
+    --gappers: calc(var(--spacing) * 5);
+    --breakpoint-3xl: 160rem;
     /* #endregion */
 
     /* #region Easings */

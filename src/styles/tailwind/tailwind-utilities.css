@@ -1,6 +1,5 @@
 @utility container {
-    @apply mx-auto;
-    @apply px-5;
+    @apply max-w-7xl 3xl:max-w-[50vw] mx-auto px-5;
 }
 
 @layer utilities {
