@@ -5,6 +5,6 @@ import { gsap } from "gsap";
 
 MouseFollower.registerGSAP(gsap);
 
-export default function initMouseFollower() {
+export default function initGsapMouseFollower() {
     new MouseFollower();
 }
