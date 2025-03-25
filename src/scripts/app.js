@@ -44,3 +44,6 @@ window.addEventListener(
     },
     { once: true }
 );
+
+// WINDOW Resize
+// window.addEventListener("resize", () => {});
