@@ -1,0 +1,48 @@
+<div
+    id="app-filter"
+    class="has-LUT has-grid"
+>
+</div>
+
+<style>
+    #app-filter {
+        position: fixed;
+        z-index: var(--filter-layer);
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        pointer-events: none;
+
+        &.has-LUT {
+            mix-blend-mode: overlay;
+            background-color: color-mix(in oklab, black 25%, transparent);
+            backdrop-filter: saturate(110%);
+        }
+
+        &.has-grid {
+            --border-color: #bebebe;
+
+            background-image: linear-gradient(
+                    to bottom,
+                    var(--border-color) 1px,
+                    transparent 0px
+                ),
+                linear-gradient(
+                    to right,
+                    var(--border-color) 1px,
+                    transparent 0px
+                );
+
+            /* background-position:
+                0 0,
+                -0.5px 0; */
+
+            background-size: 50vw 50vh;
+
+            @media (width >= 2560px) {
+                background-size: 25vw 50vh;
+            }
+        }
+    }
+</style>

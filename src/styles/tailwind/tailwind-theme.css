@@ -23,7 +23,7 @@
     --color-stone: #f7f5f1;
     --color-nude: #fff9f5;
     --color-sand: #ddcab0;
-    --color-biohazard: #c9fe6e;
+    --color-biohazard: #b9f553;
 
     --color-text: var(--color-biohazard);
     --color-body: var(--color-void);
@@ -63,6 +63,8 @@
     /* #region Layers */
     --loader-layer: 100;
     --mouse-layer: 90;
+    --noise-layer: 80;
+    --filter-layer: 70;
     --header-layer: 10;
     /* #endregion */
 }
