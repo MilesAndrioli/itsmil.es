@@ -19,26 +19,26 @@
 
     &::before {
         transition-delay: 180ms;
-        transform: scaleX(1);
+        transform: scaleX(100%);
         transform-origin: left;
     }
 
     &::after {
         transition-delay: 0ms;
-        transform: scaleX(0);
+        transform: scaleX(0%);
         transform-origin: right;
     }
 
     &:hover {
         &::before {
             transition-delay: 0ms;
-            transform: scaleX(0);
+            transform: scaleX(0%);
             transform-origin: right;
         }
 
         &::after {
             transition-delay: 180ms;
-            transform: scaleX(1);
+            transform: scaleX(100%);
             transform-origin: left;
         }
     }

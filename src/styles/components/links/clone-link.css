@@ -1,0 +1,27 @@
+.clone-link {
+    position: relative;
+    overflow: hidden;
+
+    display: inline-flex;
+
+    > span,
+    &::after {
+        transition: transform var(--out--fast);
+    }
+
+    &::after {
+        content: attr(title);
+        position: absolute;
+        transform: translateY(-100%);
+    }
+
+    &:hover {
+        > span {
+            transform: translateY(100%);
+        }
+
+        &::after {
+            transform: translateY(0%);
+        }
+    }
+}

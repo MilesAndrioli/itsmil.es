@@ -12,14 +12,14 @@
 
         background-color: currentColor;
 
-        transform: scaleX(0);
+        transform: scaleX(0%);
         transform-origin: right;
 
         transition: transform var(--out--fast);
     }
 
     &:hover::before {
-        transform: scaleX(1);
+        transform: scaleX(100%);
         transform-origin: left;
     }
 }
