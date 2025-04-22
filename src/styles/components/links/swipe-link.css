@@ -12,15 +12,15 @@
 
         background-color: currentColor;
 
-        transform-origin: right;
         transform: scaleX(0);
+        transform-origin: right;
 
         transition: transform var(--out--fast);
     }
 
     &:hover::before {
-        transform-origin: left;
         transform: scaleX(1);
+        transform-origin: left;
     }
 }
 
