@@ -1,7 +1,6 @@
 .clone-link {
     position: relative;
     overflow: hidden;
-
     display: inline-flex;
 
     > span,
@@ -10,7 +9,7 @@
     }
 
     &::after {
-        content: attr(title);
+        content: attr(data-clone-link);
         position: absolute;
         transform: translateY(-100%);
     }

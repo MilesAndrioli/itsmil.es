@@ -1,0 +1,16 @@
+---
+const { href = "#", target, text = "clone-link" } = Astro.props;
+---
+
+<a
+    href={href}
+    target={target}
+    class="clone-link"
+    data-clone-link={text}
+>
+    <span>{text}</span>
+</a>
+
+<style>
+    @import "../styles/components/links/clone-link.css";
+</style>
