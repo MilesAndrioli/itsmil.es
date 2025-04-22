@@ -1,5 +1,5 @@
 .swipe-link,
-.swipe-link-cover {
+.swipe-cover-link {
     position: relative;
 
     &::before {
@@ -24,7 +24,7 @@
     }
 }
 
-.swipe-link-cover::before {
+.swipe-cover-link::before {
     height: 100%;
     mix-blend-mode: difference;
 }

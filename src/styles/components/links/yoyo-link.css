@@ -1,5 +1,5 @@
 .yoyo-link,
-.yoyo-link-cover {
+.yoyo-cover-link {
     position: relative;
     white-space: nowrap; /* EXPERIMENTAL */
 
@@ -44,7 +44,7 @@
     }
 }
 
-.yoyo-link-cover {
+.yoyo-cover-link {
     &::before,
     &::after {
         height: 100%;
