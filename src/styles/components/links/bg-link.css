@@ -1,14 +1,27 @@
-.bg-link {
+.under-link {
+    background: linear-gradient(currentColor);
+    background-size: 0% 1px;
+
+    &:hover {
+        background-size: 100% 1px;
+    }
+}
+
+.cover-link {
     background: linear-gradient(
         color-mix(in oklab, currentColor 60%, transparent)
     );
-    background-repeat: no-repeat;
-    background-position: 0% 100%;
     background-size: 0% 50%;
-
-    transition: background-size var(--out--fast);
 
     &:hover {
         background-size: 100% 50%;
     }
+}
+
+.under-link,
+.cover-link {
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+
+    transition: background-size var(--out--fast);
 }

@@ -1,0 +1,56 @@
+.yoyo-link,
+.yoyo-link-cover {
+    position: relative;
+    white-space: nowrap; /* EXPERIMENTAL */
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+
+        background-color: currentColor;
+
+        transition: transform var(--out--fast);
+    }
+
+    &::before {
+        transform-origin: left;
+        transform: scaleX(1);
+        transition-delay: 200ms;
+
+        bottom: auto;
+        top: 0;
+    }
+
+    &::after {
+        transform-origin: right;
+        transform: scaleX(0);
+        transition-delay: 0ms;
+    }
+
+    &:hover {
+        &::before {
+            transform-origin: right;
+            transform: scaleX(0);
+            transition-delay: 0ms;
+        }
+
+        &::after {
+            transform-origin: left;
+            transform: scaleX(1);
+            transition-delay: 200ms;
+        }
+    }
+}
+
+.yoyo-link-cover {
+    &::before,
+    &::after {
+        height: 100%;
+        mix-blend-mode: difference;
+    }
+}
