@@ -1,0 +1,30 @@
+.swipe-link,
+.swipe-link-cover {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+
+        background-color: currentColor;
+
+        transform-origin: right;
+        transform: scaleX(0);
+
+        transition: transform var(--out--fast);
+    }
+
+    &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+.swipe-link-cover::before {
+    height: 100%;
+    mix-blend-mode: difference;
+}
