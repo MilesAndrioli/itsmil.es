@@ -24,12 +24,11 @@ export default function initGsapAos() {
             debug: "aosDebug" in el.dataset,
             debugId: el.dataset.aosDebug,
 
+            staggerGap: msToSec(el.dataset.aosStaggerGap || 240),
             staggerFrom: el.dataset.aosStaggerFrom,
-            staggerGap: msToSec(
-                el.dataset.aosStaggerGap ||
-                    (el.dataset.aos?.includes("split") ? 40 : 120)
-            ),
 
+            splitGap: msToSec(el.dataset.aosSplitGap || 40),
+            splitFrom: el.dataset.aosSplitFrom,
             splitType:
                 TOUCH && el.dataset.aosSplit === "chars"
                     ? "words"
