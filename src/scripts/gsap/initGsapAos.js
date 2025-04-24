@@ -59,8 +59,7 @@ export default function initGsapAos() {
     }
 
     function animate(el) {
-        // const animation = TOUCH ? "fade" : el.dataset.aos;
-        const animation = el.dataset.aos;
+        const animation = el.dataset.aos || el.dataset.aosGroup;
         if (!gsapAnimations[animation]) return;
 
         let { origin, destination } = gsapAnimations[animation];
@@ -97,5 +96,5 @@ export default function initGsapAos() {
         });
     }
 
-    document.querySelectorAll("[data-aos]").forEach(animate);
+    document.querySelectorAll("[data-aos], [data-aos-group]").forEach(animate);
 }
