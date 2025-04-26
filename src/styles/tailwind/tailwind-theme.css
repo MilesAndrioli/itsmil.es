@@ -72,5 +72,6 @@
     --noise-layer: 80;
     --filter-layer: 70;
     --header-layer: 10;
+    --playground-layer: -10;
     /* #endregion */
 }

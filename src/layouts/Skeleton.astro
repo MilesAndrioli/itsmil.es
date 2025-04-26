@@ -1,53 +1,34 @@
 ---
 import "../styles/app.css";
 
+import Head from "../components/Head.astro";
+import Smoother from "../components/Smoother.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Loader from "../components/Loader.astro";
-import Smoother from "../components/Smoother.astro";
+import Playground from "../components/Playground.astro";
 import Filter from "../components/Filter.astro";
 import Noise from "../components/Noise.astro";
-
-const { title, description } = Astro.props;
+import Loader from "../components/Loader.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
-        <meta
-            name="description"
-            content={description}
-        />
-        <meta
-            name="generator"
-            content={Astro.generator}
-        />
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="/favicon.svg"
-        />
-        <title>{title}</title>
-    </head>
+    <Head />
     <body class="antialiased bg-body text-text">
-        <div id="app-wrapper">
-            <Smoother>
-                <Header />
-                <main
-                    id="app-main"
-                    class="grid gap-50 py-10"
-                >
-                    <slot />
-                </main>
-                <Footer />
-            </Smoother>
-            <Filter />
-            <Noise />
-        </div>
+        <Smoother>
+            <Header />
+            <main
+                id="app-main"
+                class="grid gap-50 py-20"
+            >
+                <slot />
+            </main>
+            <Footer />
+        </Smoother>
+        <Playground />
+        <Filter />
+        <Noise />
+        <Loader />
+        <script src="/src/scripts/app.js"></script>
     </body>
 </html>
