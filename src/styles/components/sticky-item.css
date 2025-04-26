@@ -1,24 +1,24 @@
-.sticky-top {
+.sticky--top {
     top: var(--gappers);
     transition: top var(--header-transition);
 }
 
-body.SCROLLING--UP.HAS-REACHED--STEP-2 .sticky-top {
+body.SCROLLING--UP.HAS-REACHED--STEP-2 .sticky--top {
     top: calc(var(--gappers) + var(--APP_HEADER_HEIGHT));
 }
 
-.sticky-above-center {
+.sticky--above-center {
     top: calc(50vh - var(--height) - var(--gappers));
 }
 
-.sticky-center {
+.sticky--center {
     top: calc(50vh - (var(--height) / 2));
 }
 
-.sticky-below-center {
+.sticky--below-center {
     top: calc(50vh + var(--gappers));
 }
 
-.sticky-bottom {
+.sticky--bottom {
     top: calc(100vh - var(--height) - var(--gappers));
 }
