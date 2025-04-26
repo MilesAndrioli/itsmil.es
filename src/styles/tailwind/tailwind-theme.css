@@ -16,9 +16,15 @@
 
     /* #region Colors */
     /* https://tailwindcss.com/docs/colors#using-a-custom-palette */
-    --color-*: initial;
+    /* --color-*: initial; */
+
     --color-void: #111;
-    --color-charcoal: #222222;
+    --color-void-400: #1a1a1a;
+    --color-void-300: #242424;
+    --color-void-200: #2e2e2e;
+    --color-void-100: #383838;
+    --color-void-50: #424242;
+
     --color-alabaster: #f5f5f5;
     --color-stone: #f7f5f1;
     --color-nude: #fff9f5;
