@@ -24,12 +24,14 @@ window.TOUCH = !!ScrollTrigger.isTouch;
 
 // Utilities
 import throttle from "lodash.throttle";
+import getDimensions from "./utilities/getDimensions";
 import getStickyElements from "./utilities/getStickyElements";
+
 // GSAP
 import initGsapConfig from "./gsap/initGsapConfig";
 
-// Components
-import initMouseFollower from "./components/initMouseFollower";
+import initGsapScrollState from "./gsap/initGsapScrollState";
+import initGsapMouseFollower from "./gsap/initGsapMouseFollower";
 
 /* +-----------------------------------------+
 |           EVENTS AREA             		 |
@@ -45,13 +47,21 @@ window.addEventListener(
         initGsapConfig();
         initGsapScrollState();
         if (MNK) initGsapMouseFollower();
+        getDimensions("#app-header", "height");
         getStickyElements();
     },
     { once: true }
 );
 
 // WINDOW Resize
-// window.addEventListener(
-//     "resize",
-//     throttle(() => {}, 300, { leading: true, trailing: true })
-// );
+window.addEventListener(
+    "resize",
+    throttle(
+        () => {
+            getDimensions("#app-header", "height");
+        },
+        300,
+        { leading: true, trailing: true }
+    ),
+    { once: false }
+);

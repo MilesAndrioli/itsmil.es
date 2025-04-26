@@ -1,0 +1,55 @@
+.strike-around {
+    display: flex;
+    align-items: center;
+    gap: var(--gap, 0.5em);
+
+    &::before,
+    &::after {
+        --border-color: color-mix(in oklab, currentColor 30%, transparent);
+
+        content: "";
+        flex: 1;
+        height: 1px;
+
+        transform: scaleX(0%);
+        opacity: 0;
+    }
+
+    &::before {
+        background: linear-gradient(
+            to right,
+            var(--border-color) 70%,
+            transparent
+        );
+        transform-origin: right;
+    }
+
+    &::after {
+        background: linear-gradient(
+            to left,
+            var(--border-color) 70%,
+            transparent
+        );
+        transform-origin: left;
+    }
+
+    &.strike-around--left::after {
+        display: none;
+    }
+
+    &.strike-around--right::before {
+        display: none;
+    }
+
+    .aos-engaged &,
+    &.aos-engaged {
+        &::before,
+        &::after {
+            transform: unset;
+            opacity: 1;
+
+            transition: transform var(--in-out--giga-slow),
+                opacity var(--in-out--giga-slow);
+        }
+    }
+}
