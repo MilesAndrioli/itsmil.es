@@ -1,4 +1,4 @@
-<div id="app-playground">
+<div id="app-aurora">
     <div class="pentagon"></div>
     <!-- <div class="circle place"></div> -->
     <!-- <div class="circle place-self-center"></div> -->
@@ -44,7 +44,7 @@
         return frames;
     }
 
-    const targets = document.querySelectorAll("#app-playground > *");
+    const targets = document.querySelectorAll("#app-aurora > *");
 
     targets.forEach((el) => {
         el.style.opacity = rollOpacity();
@@ -60,9 +60,9 @@
 </script>
 
 <style>
-    #app-playground {
+    #app-aurora {
         position: fixed;
-        z-index: var(--playground-layer);
+        z-index: var(--aurora-layer);
         top: 0;
         left: 0;
         height: 100%;
