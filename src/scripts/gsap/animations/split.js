@@ -4,20 +4,44 @@ export default {
         destination: { opacity: 1 },
     },
     "split-up": {
-        origin: { opacity: 0, y: "0.5em" },
-        destination: { opacity: 1, y: 0 },
+        origin: {
+            opacity: 0,
+            y: "0.5em",
+        },
+        destination: {
+            opacity: 1,
+            y: 0,
+        },
     },
     "split-down": {
-        origin: { opacity: 0, y: "-0.5em" },
-        destination: { opacity: 1, y: 0 },
+        origin: {
+            opacity: 0,
+            y: "-0.5em",
+        },
+        destination: {
+            opacity: 1,
+            y: 0,
+        },
     },
     "split-left": {
-        origin: { opacity: 0, x: "1em" },
-        destination: { opacity: 1, x: 0 },
+        origin: {
+            opacity: 0,
+            x: "1em",
+        },
+        destination: {
+            opacity: 1,
+            x: 0,
+        },
     },
     "split-right": {
-        origin: { opacity: 0, x: "-1em" },
-        destination: { opacity: 1, x: 0 },
+        origin: {
+            opacity: 0,
+            x: "-1em",
+        },
+        destination: {
+            opacity: 1,
+            x: 0,
+        },
     },
     "split-clip-up": {
         origin: {
