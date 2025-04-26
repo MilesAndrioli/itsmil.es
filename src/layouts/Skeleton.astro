@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import Loader from "../components/Loader.astro";
 import Smoother from "../components/Smoother.astro";
 import Filter from "../components/Filter.astro";
+import Noise from "../components/Noise.astro";
 
 const { title, description } = Astro.props;
 ---
@@ -16,7 +17,7 @@ const { title, description } = Astro.props;
         <meta charset="UTF-8" />
         <meta
             name="viewport"
-            content="width=device-width"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
         />
         <meta
             name="description"
@@ -46,6 +47,7 @@ const { title, description } = Astro.props;
                 <Footer />
             </Smoother>
             <Filter />
+            <Noise />
         </div>
     </body>
 </html>
