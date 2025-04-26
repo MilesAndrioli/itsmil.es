@@ -1,7 +1,7 @@
 @import "./tailwind/tailwind.css";
 
 @layer base {
-@import "./definitions/base.css";
+    @import "./definitions/base.css";
     @import "./definitions/fonts.css";
     @import "./definitions/misc.css";
 }
