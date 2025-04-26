@@ -9,6 +9,8 @@ import Aurora from "../components/Aurora.astro";
 import Filter from "../components/Filter.astro";
 import Noise from "../components/Noise.astro";
 import Loader from "../components/Loader.astro";
+
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 
 <!doctype html>
@@ -29,6 +31,7 @@ import Loader from "../components/Loader.astro";
         <Filter />
         <Noise />
         <Loader />
+        <SpeedInsights />
         <script src="/src/scripts/app.js"></script>
     </body>
 </html>
