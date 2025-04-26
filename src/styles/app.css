@@ -3,17 +3,14 @@
 @layer base {
     @import "./definitions/base.css";
     @import "./definitions/fonts.css";
-    @import "./definitions/misc.css";
 }
 
 @layer components {
     @import "./components/app-header.css";
     @import "./components/mouse-follower.css";
     @import "./components/sticky-item.css";
-
     @import "./components/links/bg-link.css";
     @import "./components/links/swipe-link.css";
     @import "./components/links/yoyo-link.css";
-
     @import "./components/strike-around.css";
 }
