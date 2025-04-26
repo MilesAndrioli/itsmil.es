@@ -22,6 +22,9 @@ window.TOUCH = !!ScrollTrigger.isTouch;
 |           IMPORTS AREA             		 |
 +-----------------------------------------+ */
 
+// Utilities
+import throttle from "lodash.throttle";
+import getStickyElements from "./utilities/getStickyElements";
 // GSAP
 import initGsapConfig from "./gsap/initGsapConfig";
 
@@ -40,10 +43,15 @@ window.addEventListener(
     "load",
     () => {
         initGsapConfig();
-        if (MNK) initMouseFollower();
+        initGsapScrollState();
+        if (MNK) initGsapMouseFollower();
+        getStickyElements();
     },
     { once: true }
 );
 
 // WINDOW Resize
-// window.addEventListener("resize", () => {});
+// window.addEventListener(
+//     "resize",
+//     throttle(() => {}, 300, { leading: true, trailing: true })
+// );

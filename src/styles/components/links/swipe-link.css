@@ -1,6 +1,7 @@
 .swipe-link,
 .swipe-cover-link {
     position: relative;
+    white-space: nowrap; /* EXPERIMENTAL */
 
     &::before {
         content: "";
