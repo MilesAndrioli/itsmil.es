@@ -47,7 +47,7 @@
     const targets = document.querySelectorAll("#app-aurora > *");
 
     targets.forEach((el) => {
-        el.style.opacity = rollOpacity();
+        (el as HTMLElement).style.opacity = rollOpacity().toFixed(2);
 
         gsap.to(el, {
             keyframes: rollKeyframes(10),
