@@ -1,10 +1,10 @@
 .sticky--top {
     top: var(--gappers);
     transition: top var(--header-transition);
-}
 
-body.SCROLLING--UP.HAS-REACHED--STEP-2 .sticky--top {
-    top: calc(var(--gappers) + var(--APP_HEADER_HEIGHT));
+    body.SCROLLING--UP.HAS-REACHED--STEP-2 & {
+        top: calc(var(--gappers) + var(--APP_HEADER_HEIGHT));
+    }
 }
 
 .sticky--above-center {
