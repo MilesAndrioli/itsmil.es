@@ -29,7 +29,7 @@ import getStickyElements from "./utilities/getStickyElements";
 
 // GSAP
 import initGsapConfig from "./gsap/initGsapConfig";
-
+import initGsapAos from "./gsap/initGsapAos_Gemini_2.5_pro";
 import initGsapScrollState from "./gsap/initGsapScrollState";
 import initGsapMouseFollower from "./gsap/initGsapMouseFollower";
 
@@ -45,6 +45,7 @@ window.addEventListener(
     "load",
     () => {
         initGsapConfig();
+        initGsapAos();
         initGsapScrollState();
         if (MNK) initGsapMouseFollower();
         getDimensions("#app-header", "height");
