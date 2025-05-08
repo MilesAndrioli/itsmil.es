@@ -3,10 +3,7 @@ const { wrapperTag = "section", ...restProps } = Astro.props;
 const WrapperTag = wrapperTag;
 ---
 
-<WrapperTag
-    data-unveil-wrapper
-    {...restProps}
->
+<WrapperTag data-unveil-wrapper {...restProps}>
     <div data-unveil-target>
         <slot />
     </div>
@@ -39,7 +36,7 @@ const WrapperTag = wrapperTag;
 
                     trigger: el,
                     start: "top bottom",
-                    end: () => `+=${el.offsetHeight}`,
+                    end: () => `+=${(el as HTMLElement).offsetHeight}`,
 
                     // markers: true,
                 });
