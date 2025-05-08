@@ -18,7 +18,7 @@
         "DOMContentLoaded",
         () => {
             const lenis = new Lenis({
-                content: document.querySelector("#smooth-content"),
+                content: document.querySelector("#smooth-content") || undefined,
                 // lerp: 0.075,
                 // duration: 1.4,
                 wheelMultiplier: 1.3,
