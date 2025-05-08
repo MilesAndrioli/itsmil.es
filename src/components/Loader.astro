@@ -17,13 +17,16 @@
             document.body.classList.add("PAGE-HAS--LOADED");
 
             const loader = document.getElementById("app-loader");
-            loader.addEventListener(
-                "transitionend",
-                () => {
-                    loader.remove();
-                },
-                { once: true }
-            );
+
+            if (loader) {
+                loader.addEventListener(
+                    "transitionend",
+                    () => {
+                        loader.remove();
+                    },
+                    { once: true }
+                );
+            }
         },
         { once: true }
     );
