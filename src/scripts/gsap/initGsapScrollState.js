@@ -6,27 +6,35 @@ import throttle from "lodash.throttle";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function initGsapScrollState() {
+    const root = document.documentElement;
     const body = document.body;
+    const root = document.documentElement;
 
     // Detect Scroll Milestones
     ScrollTrigger.create({
         trigger: body,
         start: "top top",
-        toggleClass: "HAS-REACHED--STEP-1",
+        toggleClass: {
+            targets: root,
+            className: "HAS-REACHED--STEP-1",
+        },
         markers: false,
     });
 
     ScrollTrigger.create({
         trigger: body,
         start: `${innerHeight} top`,
-        toggleClass: "HAS-REACHED--STEP-2",
+        toggleClass: {
+            targets: root,
+            className: "HAS-REACHED--STEP-2",
+        },
         markers: false,
     });
 
     ScrollTrigger.create({
         trigger: "#app-footer",
         toggleClass: {
-            targets: body,
+            targets: root,
             className: "HAS-REACHED--FOOTER",
         },
         markers: false,
@@ -35,8 +43,8 @@ export default function initGsapScrollState() {
     // Detect Scroll Direction
     ScrollTrigger.create({
         onUpdate: (self) => {
-            body.classList.toggle("SCROLLING--DOWN", self.direction === 1);
-            body.classList.toggle("SCROLLING--UP", self.direction === -1);
+            root.classList.toggle("SCROLLING--DOWN", self.direction === 1);
+            root.classList.toggle("SCROLLING--UP", self.direction === -1);
         },
         markers: false,
     });
@@ -46,7 +54,7 @@ export default function initGsapScrollState() {
         onUpdate: throttle(
             (self) => {
                 const scrollProgress = Math.round(self.progress * 100);
-                document.documentElement.style.setProperty(
+                root.style.setProperty(
                     "--SCROLL_PROGRESS",
                     `${scrollProgress}`
                 );
