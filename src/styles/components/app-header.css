@@ -1,5 +1,5 @@
 :root {
-    --header-transition: var(--inOut);
+    --header-transition: var(--out);
 }
 
 #app-header {
@@ -12,17 +12,30 @@
     --shift-out: translateY(calc(var(--APP_HEADER_HEIGHT) * -1));
     --shift-in: unset;
 
-    transition: transform var(--header-transition);
-}
+    transition: padding var(--header-transition),
+        transform var(--header-transition);
 
-body.HAS-REACHED--STEP-2 #app-header {
-    transform: var(--shift-out);
-}
+    .HAS-REACHED--STEP-1 & {
+        @apply !py-1;
+    }
 
-body.SCROLLING--UP.HAS-REACHED--STEP-2 #app-header {
-    transform: var(--shift-in);
-}
+    .HAS-REACHED--STEP-2 & {
+        transform: var(--shift-out);
+    }
 
-body.HAS-REACHED--FOOTER #app-header {
-    transform: var(--shift-in);
+    .SCROLLING--UP.HAS-REACHED--STEP-2 & {
+        transform: var(--shift-in);
+    }
+
+    .HAS-REACHED--FOOTER & {
+        transform: var(--shift-in);
+    }
+
+    .logo {
+        transition: transform var(--header-transition);
+
+        .HAS-REACHED--STEP-1 & {
+            transform: rotate3d(1, 1, 0, 180deg);
+        }
+    }
 }
