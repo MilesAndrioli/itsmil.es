@@ -4,13 +4,16 @@ import Home_1 from "../sections/Home_1.astro";
 ---
 
 <Skeleton title="Home" description="This will be the Home page description.">
-    <div class="grid gap-5">
+    <Home_1 />
+    <Home_1 />
+    <Home_1 />
+
+    <div class="grid gap-5" data-aos-group="fade-in-blur-out">
         <section class="sticky sticky--top">
             <div class="container">
                 <div
                     class="grid grid-cols-5 gap-20 border border-border rounded-xl p-20 bg-void"
-                    data-aos-group="fade-in-blur-out"
-                    data-aos-stagger-gap="500"
+                    data-aos-child
                 >
                     <div
                         class="col-span-2 overflow-hidden border border-border rounded-xl"
@@ -37,7 +40,7 @@ import Home_1 from "../sections/Home_1.astro";
                             <p
                                 class="text-2xl"
                                 data-aos-child="split-chromatic-up"
-                                data-aos-split="words"
+                                data-aos-split="lines"
                             >
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Sunt fugit obcaecati porro
@@ -60,7 +63,7 @@ import Home_1 from "../sections/Home_1.astro";
             <div class="container">
                 <div
                     class="grid grid-cols-5 gap-20 border border-border rounded-xl p-20 bg-void"
-                    data-aos-group="fade-in-blur-out"
+                    data-aos-child
                 >
                     <div
                         class="col-span-2 overflow-hidden border border-border rounded-xl"
@@ -75,28 +78,31 @@ import Home_1 from "../sections/Home_1.astro";
                             data-speed="auto"
                             data-aos-child></video>
                     </div>
-                    <div class="col-span-2">
+                    <div class="col-span-3">
                         <div class="sticky sticky--above-center">
                             <h2
-                                class="text-6xl font-serif"
-                                data-aos-child="split-left-blur"
+                                class="text-6xl font-serif strike-around strike-around--right"
+                                data-aos-child="split-chromatic"
                                 data-aos-split="chars"
                             >
-                                Hello World
+                                <span>Hello World</span>
                             </h2>
                             <p
-                                class="text-2xl text-justify"
-                                data-aos-child="split-left-blur"
-                                data-aos-split="words"
+                                class="text-2xl"
+                                data-aos-child="split-chromatic-up"
+                                data-aos-split="lines"
                             >
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Sunt fugit obcaecati porro
                                 accusantium vel nobis corrupti doloribus ipsa
-                                vero quam, molestias illum vitae <a
-                                    href="#"
-                                    class="cover-link"
-                                    >soluta praesentium incidunt veniam</a
-                                > eligendi sapiente culpa!
+                                vero quam, <a href="#" class="cover-link"
+                                    >molestias illum vitae soluta praesentium
+                                    incidunt veniam</a
+                                > eligendi sapiente culpa! Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Sunt fugit obcaecati
+                                porro accusantium vel nobis corrupti doloribus ipsa
+                                vero quam, molestias illum vitae soluta praesentium
+                                incidunt veniam eligendi sapiente culpa!
                             </p>
                         </div>
                     </div>
@@ -107,7 +113,7 @@ import Home_1 from "../sections/Home_1.astro";
             <div class="container">
                 <div
                     class="grid grid-cols-5 gap-20 border border-border rounded-xl p-20 bg-void"
-                    data-aos-group="fade-in-blur-out"
+                    data-aos-child
                 >
                     <div
                         class="col-span-2 overflow-hidden border border-border rounded-xl"
@@ -122,28 +128,31 @@ import Home_1 from "../sections/Home_1.astro";
                             data-speed="auto"
                             data-aos-child></video>
                     </div>
-                    <div class="col-span-2">
+                    <div class="col-span-3">
                         <div class="sticky sticky--above-center">
                             <h2
-                                class="text-6xl font-serif"
-                                data-aos-child="split-left-blur"
+                                class="text-6xl font-serif strike-around strike-around--right"
+                                data-aos-child="split-chromatic"
                                 data-aos-split="chars"
                             >
-                                Hello World
+                                <span>Hello World</span>
                             </h2>
                             <p
-                                class="text-2xl text-justify"
-                                data-aos-child="split-left-blur"
-                                data-aos-split="words"
+                                class="text-2xl"
+                                data-aos-child="split-chromatic-up"
+                                data-aos-split="lines"
                             >
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Sunt fugit obcaecati porro
                                 accusantium vel nobis corrupti doloribus ipsa
-                                vero quam, molestias illum vitae <a
-                                    href="#"
-                                    class="cover-link"
-                                    >soluta praesentium incidunt veniam</a
-                                > eligendi sapiente culpa!
+                                vero quam, <a href="#" class="cover-link"
+                                    >molestias illum vitae soluta praesentium
+                                    incidunt veniam</a
+                                > eligendi sapiente culpa! Lorem ipsum dolor sit
+                                amet consectetur adipisicing elit. Sunt fugit obcaecati
+                                porro accusantium vel nobis corrupti doloribus ipsa
+                                vero quam, molestias illum vitae soluta praesentium
+                                incidunt veniam eligendi sapiente culpa!
                             </p>
                         </div>
                     </div>
@@ -151,5 +160,7 @@ import Home_1 from "../sections/Home_1.astro";
             </div>
         </section>
     </div>
+    <Home_1 />
+    <Home_1 />
     <Home_1 />
 </Skeleton>
