@@ -7,12 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function initGsapScrollState() {
     const root = document.documentElement;
-    const body = document.body;
-    const root = document.documentElement;
+    const main = document.getElementById("app-main");
 
     // Detect Scroll Milestones
     ScrollTrigger.create({
-        trigger: body,
+        trigger: main,
         start: "top top",
         toggleClass: {
             targets: root,
@@ -22,7 +21,7 @@ export default function initGsapScrollState() {
     });
 
     ScrollTrigger.create({
-        trigger: body,
+        trigger: main,
         start: `${innerHeight} top`,
         toggleClass: {
             targets: root,
