@@ -2,7 +2,7 @@
     top: var(--gappers);
     transition: top var(--header-transition);
 
-    body.SCROLLING--UP.HAS-REACHED--STEP-2 & {
+    .SCROLLING--UP.HAS-REACHED--STEP-2 & {
         top: calc(var(--gappers) + var(--APP_HEADER_HEIGHT));
     }
 }
