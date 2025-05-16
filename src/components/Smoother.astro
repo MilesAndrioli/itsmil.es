@@ -43,6 +43,10 @@
                 smooth: 0,
                 effects: true,
             });
+
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh(true);
+            });
         },
         { once: true }
     );
