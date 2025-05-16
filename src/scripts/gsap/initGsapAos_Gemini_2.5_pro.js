@@ -107,6 +107,10 @@ export default function initGsapAos() {
             const animationName = getAnimationKey(child, groupAnimationName);
             if (!gsapAnimations[animationName]) return;
 
+            // Apply will-change: transform; to avoid visual jitter
+            // @see https://number-flow.barvian.me/vanilla#attributes
+            gsap.set(child, { willChange: "transform" });
+
             const animationConfig = gsapAnimations[animationName];
             const playInReverse = child.dataset.aosAfter !== undefined;
 
@@ -170,8 +174,6 @@ export default function initGsapAos() {
         timeline,
         indexInTimeline
     ) {
-        gsap.set(childEl, { willChange: "transform" }); // Optimize for performance
-
         const splitType =
             typeof TOUCH !== "undefined" &&
             TOUCH &&
