@@ -8,13 +8,14 @@
 </div>
 
 <script>
-    document.body.classList.add("PAGE-IS--LOADING");
+    const root = document.documentElement;
+    root.classList.add("PAGE-IS--LOADING");
 
     window.addEventListener(
         "load",
         () => {
-            document.body.classList.remove("PAGE-IS--LOADING");
-            document.body.classList.add("PAGE-HAS--LOADED");
+            root.classList.remove("PAGE-IS--LOADING");
+            root.classList.add("PAGE-HAS--LOADED");
 
             const loader = document.getElementById("app-loader");
 
@@ -51,7 +52,7 @@
         transition: opacity var(--in-out--giga-slow);
     }
 
-    body.PAGE-HAS--LOADED #app-loader {
+    html.PAGE-HAS--LOADED #app-loader {
         opacity: 0;
     }
 

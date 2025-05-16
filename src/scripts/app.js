@@ -66,3 +66,16 @@ window.addEventListener(
     ),
     { once: false }
 );
+
+// WINDOW Scroll
+window.addEventListener(
+    "scroll",
+    throttle(
+        () => {
+            getDimensions("#app-header", "height");
+        },
+        1000,
+        { leading: true, trailing: true }
+    ),
+    { once: false }
+);

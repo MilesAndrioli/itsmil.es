@@ -30,32 +30,36 @@ const getDimensions = (selector, dimension = "both", debug = false) => {
         .toUpperCase();
 
     if (dimension === "height" || dimension === "both") {
+        const height = Number(targetRect.height.toFixed(2));
+
         // Define CSS Global Variable
         document.documentElement.style.setProperty(
             `--${targetName}_HEIGHT`,
-            `${targetRect.height}px`
+            `${height}px`
         );
 
         // Define JS Global Variable
-        window[`${targetName}_HEIGHT`] = targetRect.height;
+        window[`${targetName}_HEIGHT`] = height;
 
         if (debug) {
-            console.debug(`${selector} height: ${targetRect.height}px`);
+            console.debug(`${selector} height: ${height}px`);
         }
     }
 
     if (dimension === "width" || dimension === "both") {
+        const width = Number(targetRect.width.toFixed(2));
+
         // Define CSS Global Variable
         document.documentElement.style.setProperty(
             `--${targetName}_WIDTH`,
-            `${targetRect.width}px`
+            `${width}px`
         );
 
         // Define JS Global Variable
-        window[`${targetName}_WIDTH`] = targetRect.width;
+        window[`${targetName}_WIDTH`] = width;
 
         if (debug) {
-            console.debug(`${selector} width: ${targetRect.width}px`);
+            console.debug(`${selector} width: ${width}px`);
         }
     }
 };

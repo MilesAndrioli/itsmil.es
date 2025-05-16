@@ -1,35 +1,30 @@
 ---
-import { Picture } from "astro:assets";
-import Balenciaga from "../assets/images/Balenciaga.png";
+import Flower3 from "../assets/svgs/shapes/CS_Flower_3.svg";
 ---
 
 <section class="min-h-[50vh] grid place-items-center text-center">
     <h2
-        class="text-7xl font-serif uppercase font-semibold absolute mb-0"
+        class="text-8xl font-monument uppercase absolute mb-0"
         data-speed="1.1"
         data-aos="split-chromatic-up"
         data-aos-split="chars"
         data-aos-scrub
     >
-        Balenciaga<br />Speed 2.0
+        CoolShapes<br />Flower 3.0
     </h2>
-    <Picture
-        src={Balenciaga}
-        alt=""
-        formats={["avif", "webp"]}
-        height={900}
+    <Flower3
+        class="absolute"
         data-speed="0.9"
-        pictureAttributes={{
-            class: "absolute",
-        }}
+        data-aos="rotate-135"
+        data-aos-scrub
     />
     <h2
-        class="text-7xl font-serif uppercase font-semibold text-stroke"
+        class="text-8xl font-monument uppercase text-stroke"
         data-speed="1.1"
         data-aos="split-chromatic-up"
         data-aos-split="chars"
         data-aos-scrub
     >
-        Balenciaga<br />Speed 2.0
+        CoolShapes<br />Flower 3.0
     </h2>
 </section>
